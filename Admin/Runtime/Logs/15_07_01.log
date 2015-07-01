@@ -3267,3 +3267,1167 @@ INFO: [ view_end ] --START--
 INFO: ShowPageTrace Behavior ::run [ RunTime:0.001239s ]
 INFO: [ view_end ] --END-- [ RunTime:0.001335s ]
 
+[ 2015-07-01T14:21:33+08:00 ] 127.0.0.1 /index.php/Model/table_list.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001043s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001147s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000798s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000884s ]
+SQL: SHOW COLUMNS FROM `cm_table` [ RunTime:0.004121s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\wamp\www\thinkphpProject\mycms\ThinkPHP\Lib\Core\Db.class.php 第 424 行.
+SQL: SELECT * FROM `cm_table` ORDER BY table_id DESC  [ RunTime:0.000404s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.022004s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022148s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000974s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000965s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000831s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000893s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003964s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000802s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000881s ]
+
+[ 2015-07-01T14:22:18+08:00 ] 127.0.0.1 /index.php/Model/add_table
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001060s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001168s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000826s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000924s ]
+SQL: select table_name from information_schema.tables where table_schema='mpcz'  [ RunTime:0.000668s ]
+SQL: SHOW COLUMNS FROM `cm_table` [ RunTime:0.003189s ]
+SQL: INSERT INTO `cm_table` (`table_name`,`pid`,`description`,`list_button`) VALUES ('worker',0,'','a:2:{i:0;a:2:{s:4:\"href\";s:18:\"Worker/Worker_edit\";s:4:\"desc\";s:6:\"编辑\";}i:1;a:2:{s:4:\"href\";s:17:\"Worker/Worker_del\";s:4:\"desc\";s:6:\"删除\";}}') [ RunTime:0.039129s ]
+SQL: SHOW COLUMNS FROM `cm_table_column` [ RunTime:0.008926s ]
+SQL: INSERT INTO `cm_table_column` (`table_id`,`column_desc`,`column_name`,`column_type`,`is_list`) VALUES (28,'主键（自增）','worker_id','primaryKey',1) [ RunTime:0.000996s ]
+SQL: CREATE TABLE worker(worker_id INT not null primary key AUTO_INCREMENT, worker_sort INT NOT NULL DEFAULT 0 ) default charset utf8 [ RunTime:0.087026s ]
+NOTIC: [2] mysql_num_rows() expects parameter 1 to be resource, boolean given C:\wamp\www\thinkphpProject\mycms\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 109 行.
+NOTIC: [2] mysql_free_result() expects parameter 1 to be resource, boolean given C:\wamp\www\thinkphpProject\mycms\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 80 行.
+SQL: INSERT INTO `cm_table_column` (`table_id`,`column_type`,`column_name`,`is_add`,`is_edit`,`column_desc`,`column_help`) VALUES (28,'singleErea','worker_sort',1,1,'排序','排序') [ RunTime:0.000535s ]
+SQL: UPDATE `cm_table_column` SET `cm_table_column_sort`=201 WHERE ( tab_col_id=201 ) [ RunTime:0.001512s ]
+NOTIC: [2048] Non-static method File::copyFile() should not be called statically, assuming $this from incompatible context C:\wamp\www\thinkphpProject\mycms\Admin\Lib\Action\ModelAction.class.php 第 1591 行.
+NOTIC: [2048] Non-static method File::reName() should not be called statically, assuming $this from incompatible context C:\wamp\www\thinkphpProject\mycms\Admin\Lib\Action\ModelAction.class.php 第 1594 行.
+NOTIC: [2048] Non-static method File::copyFile() should not be called statically, assuming $this from incompatible context C:\wamp\www\thinkphpProject\mycms\Admin\Lib\Action\ModelAction.class.php 第 1628 行.
+NOTIC: [2048] Non-static method File::reName() should not be called statically, assuming $this from incompatible context C:\wamp\www\thinkphpProject\mycms\Admin\Lib\Action\ModelAction.class.php 第 1631 行.
+
+[ 2015-07-01T14:22:20+08:00 ] 127.0.0.1 /index.php/Model/table_list.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001101s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001225s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000672s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000774s ]
+SQL: SHOW COLUMNS FROM `cm_table` [ RunTime:0.004870s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\wamp\www\thinkphpProject\mycms\ThinkPHP\Lib\Core\Db.class.php 第 424 行.
+SQL: SELECT * FROM `cm_table` ORDER BY table_id DESC  [ RunTime:0.000337s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.019179s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019289s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000752s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000651s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000548s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001215s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003813s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001741s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001954s ]
+
+[ 2015-07-01T14:22:33+08:00 ] 127.0.0.1 /index.php/Model/table_column_list/table_id/28.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002490s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002629s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000879s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000977s ]
+SQL: SHOW COLUMNS FROM `cm_table_column` [ RunTime:0.003867s ]
+SQL: SELECT * FROM `cm_table_column` WHERE ( table_id=28 ) ORDER BY cm_table_column_sort ASC  [ RunTime:0.000669s ]
+SQL: SHOW COLUMNS FROM `cm_table` [ RunTime:0.003200s ]
+SQL: SELECT * FROM `cm_table` WHERE ( table_id=28 ) LIMIT 1   [ RunTime:0.000266s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.016728s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016839s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000466s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000389s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000318s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000513s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001915s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000538s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000620s ]
+
+[ 2015-07-01T14:22:36+08:00 ] 127.0.0.1 /index.php/Model/add_table_column/table_id/28.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000759s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000862s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000578s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000664s ]
+SQL: SHOW COLUMNS FROM `cm_list` [ RunTime:0.026578s ]
+SQL: SELECT * FROM `cm_list`  [ RunTime:0.000344s ]
+SQL: SHOW COLUMNS FROM `cm_table` [ RunTime:0.003536s ]
+SQL: SELECT * FROM `cm_table` WHERE ( table_id=28 ) LIMIT 1   [ RunTime:0.000359s ]
+SQL: select table_name from information_schema.tables where table_schema='mpcz'  [ RunTime:0.000839s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="admin"  AND table_schema = "mpcz" [ RunTime:0.003320s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="admin_access"  AND table_schema = "mpcz" [ RunTime:0.009856s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="admin_node"  AND table_schema = "mpcz" [ RunTime:0.003144s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="admin_role"  AND table_schema = "mpcz" [ RunTime:0.002935s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="admin_role_user"  AND table_schema = "mpcz" [ RunTime:0.017437s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="advertise"  AND table_schema = "mpcz" [ RunTime:0.003148s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="art_position"  AND table_schema = "mpcz" [ RunTime:0.003097s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="article"  AND table_schema = "mpcz" [ RunTime:0.014094s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="catalog"  AND table_schema = "mpcz" [ RunTime:0.003204s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="category"  AND table_schema = "mpcz" [ RunTime:0.003007s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="cm_list"  AND table_schema = "mpcz" [ RunTime:0.002723s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="cm_list_item"  AND table_schema = "mpcz" [ RunTime:0.020685s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="cm_table"  AND table_schema = "mpcz" [ RunTime:0.003043s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="cm_table_column"  AND table_schema = "mpcz" [ RunTime:0.003386s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="friend_links"  AND table_schema = "mpcz" [ RunTime:0.002934s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="others"  AND table_schema = "mpcz" [ RunTime:0.011872s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="product"  AND table_schema = "mpcz" [ RunTime:0.003236s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="relative_pro"  AND table_schema = "mpcz" [ RunTime:0.014166s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="web_baseinfo"  AND table_schema = "mpcz" [ RunTime:0.002869s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="website"  AND table_schema = "mpcz" [ RunTime:0.003449s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="worker"  AND table_schema = "mpcz" [ RunTime:0.002778s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: inputType C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 117 行.
+NOTIC: [8] Undefined variable: inputInfo C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 505 行.
+NOTIC: [8] Undefined variable: inputInfo C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 507 行.
+NOTIC: [8] Undefined variable: inputInfo C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 514 行.
+NOTIC: [8] Undefined variable: inputInfo C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 515 行.
+NOTIC: [8] Undefined variable: inputInfo C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 523 行.
+NOTIC: [8] Undefined variable: inputInfo C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 538 行.
+NOTIC: [2] Invalid argument supplied for foreach() C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 538 行.
+NOTIC: [8] Undefined variable: val C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 542 行.
+NOTIC: [8] Undefined variable: val C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 543 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.027754s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027850s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000591s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000437s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000303s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000486s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002037s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000552s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000630s ]
+
+[ 2015-07-01T14:22:58+08:00 ] 127.0.0.1 /index.php/Model/do_add_column.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000775s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000913s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000565s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000650s ]
+SQL: SHOW COLUMNS FROM `cm_table` [ RunTime:0.002976s ]
+SQL: SELECT * FROM `cm_table` WHERE ( table_id=28 ) LIMIT 1   [ RunTime:0.000362s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="worker"  AND table_schema = "mpcz" [ RunTime:0.003436s ]
+SQL: SHOW COLUMNS FROM `cm_table_column` [ RunTime:0.003335s ]
+SQL: INSERT INTO `cm_table_column` (`table_id`,`column_name`,`column_type`,`is_add`,`is_edit`,`column_default_value`,`column_desc`,`column_help`,`column_error_message`,`is_validate`,`min_length`,`max_length`,`validate_regexp`) VALUES (28,'wokk_name','singleErea',1,1,'','姓名','','',0,0,999999,'0') [ RunTime:0.000299s ]
+SQL: ALTER TABLE worker ADD wokk_name VARCHAR( 255 )  NOT NULL DEFAULT ''   [ RunTime:0.303945s ]
+NOTIC: [2] mysql_num_rows() expects parameter 1 to be resource, boolean given C:\wamp\www\thinkphpProject\mycms\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 109 行.
+NOTIC: [2] mysql_free_result() expects parameter 1 to be resource, boolean given C:\wamp\www\thinkphpProject\mycms\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 80 行.
+SQL: UPDATE `cm_table_column` SET `cm_table_column_sort`=202 WHERE ( tab_col_id=202 ) [ RunTime:0.000626s ]
+
+[ 2015-07-01T14:22:59+08:00 ] 127.0.0.1 /index.php/Model/table_column_list/table_id/28.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.003342s ]
+INFO: [ route_check ] --END-- [ RunTime:0.003561s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001156s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001374s ]
+SQL: SHOW COLUMNS FROM `cm_table_column` [ RunTime:0.003283s ]
+SQL: SELECT * FROM `cm_table_column` WHERE ( table_id=28 ) ORDER BY cm_table_column_sort ASC  [ RunTime:0.000435s ]
+SQL: SHOW COLUMNS FROM `cm_table` [ RunTime:0.002746s ]
+SQL: SELECT * FROM `cm_table` WHERE ( table_id=28 ) LIMIT 1   [ RunTime:0.000260s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.017518s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017628s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000632s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000461s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000319s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000506s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002140s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000543s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000619s ]
+
+[ 2015-07-01T14:23:01+08:00 ] 127.0.0.1 /index.php/Model/add_table_column/table_id/28.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000662s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000761s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000502s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000582s ]
+SQL: SHOW COLUMNS FROM `cm_list` [ RunTime:0.003245s ]
+SQL: SELECT * FROM `cm_list`  [ RunTime:0.000215s ]
+SQL: SHOW COLUMNS FROM `cm_table` [ RunTime:0.002749s ]
+SQL: SELECT * FROM `cm_table` WHERE ( table_id=28 ) LIMIT 1   [ RunTime:0.000226s ]
+SQL: select table_name from information_schema.tables where table_schema='mpcz'  [ RunTime:0.000511s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="admin"  AND table_schema = "mpcz" [ RunTime:0.002828s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="admin_access"  AND table_schema = "mpcz" [ RunTime:0.002617s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="admin_node"  AND table_schema = "mpcz" [ RunTime:0.002915s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="admin_role"  AND table_schema = "mpcz" [ RunTime:0.002744s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="admin_role_user"  AND table_schema = "mpcz" [ RunTime:0.003016s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="advertise"  AND table_schema = "mpcz" [ RunTime:0.003137s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="art_position"  AND table_schema = "mpcz" [ RunTime:0.002739s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="article"  AND table_schema = "mpcz" [ RunTime:0.003184s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="catalog"  AND table_schema = "mpcz" [ RunTime:0.003018s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="category"  AND table_schema = "mpcz" [ RunTime:0.003053s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="cm_list"  AND table_schema = "mpcz" [ RunTime:0.002673s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="cm_list_item"  AND table_schema = "mpcz" [ RunTime:0.002738s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="cm_table"  AND table_schema = "mpcz" [ RunTime:0.002693s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="cm_table_column"  AND table_schema = "mpcz" [ RunTime:0.003350s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="friend_links"  AND table_schema = "mpcz" [ RunTime:0.004098s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="others"  AND table_schema = "mpcz" [ RunTime:0.002963s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="product"  AND table_schema = "mpcz" [ RunTime:0.003282s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="relative_pro"  AND table_schema = "mpcz" [ RunTime:0.003116s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="web_baseinfo"  AND table_schema = "mpcz" [ RunTime:0.005630s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="website"  AND table_schema = "mpcz" [ RunTime:0.002654s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="worker"  AND table_schema = "mpcz" [ RunTime:0.002721s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: inputType C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 117 行.
+NOTIC: [8] Undefined variable: inputInfo C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 505 行.
+NOTIC: [8] Undefined variable: inputInfo C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 507 行.
+NOTIC: [8] Undefined variable: inputInfo C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 514 行.
+NOTIC: [8] Undefined variable: inputInfo C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 515 行.
+NOTIC: [8] Undefined variable: inputInfo C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 523 行.
+NOTIC: [8] Undefined variable: inputInfo C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 538 行.
+NOTIC: [2] Invalid argument supplied for foreach() C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 538 行.
+NOTIC: [8] Undefined variable: val C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 542 行.
+NOTIC: [8] Undefined variable: val C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 543 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.012454s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012551s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000597s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000394s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000276s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000467s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001955s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000492s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000570s ]
+
+[ 2015-07-01T14:23:24+08:00 ] 127.0.0.1 /index.php/Model/do_add_column.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000674s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000780s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000506s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000590s ]
+SQL: SHOW COLUMNS FROM `cm_table` [ RunTime:0.003165s ]
+SQL: SELECT * FROM `cm_table` WHERE ( table_id=28 ) LIMIT 1   [ RunTime:0.000287s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="worker"  AND table_schema = "mpcz" [ RunTime:0.003302s ]
+SQL: SHOW COLUMNS FROM `cm_table_column` [ RunTime:0.003541s ]
+SQL: INSERT INTO `cm_table_column` (`table_id`,`column_name`,`column_type`,`is_add`,`is_edit`,`column_default_value`,`column_desc`,`column_help`,`column_error_message`,`is_validate`,`min_length`,`max_length`,`validate_regexp`) VALUES (28,'indentify','singleErea',1,1,'','身份证','','',0,0,999999,'0') [ RunTime:0.000379s ]
+SQL: ALTER TABLE worker ADD indentify VARCHAR( 255 )  NOT NULL DEFAULT ''   [ RunTime:0.191270s ]
+NOTIC: [2] mysql_num_rows() expects parameter 1 to be resource, boolean given C:\wamp\www\thinkphpProject\mycms\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 109 行.
+NOTIC: [2] mysql_free_result() expects parameter 1 to be resource, boolean given C:\wamp\www\thinkphpProject\mycms\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 80 行.
+SQL: UPDATE `cm_table_column` SET `cm_table_column_sort`=203 WHERE ( tab_col_id=203 ) [ RunTime:0.000419s ]
+
+[ 2015-07-01T14:23:24+08:00 ] 127.0.0.1 /index.php/Model/table_column_list/table_id/28.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001185s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001345s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000843s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000978s ]
+SQL: SHOW COLUMNS FROM `cm_table_column` [ RunTime:0.011086s ]
+SQL: SELECT * FROM `cm_table_column` WHERE ( table_id=28 ) ORDER BY cm_table_column_sort ASC  [ RunTime:0.000769s ]
+SQL: SHOW COLUMNS FROM `cm_table` [ RunTime:0.002976s ]
+SQL: SELECT * FROM `cm_table` WHERE ( table_id=28 ) LIMIT 1   [ RunTime:0.000249s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.020427s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020542s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000600s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000489s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000353s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000529s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002234s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000608s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000725s ]
+
+[ 2015-07-01T14:23:27+08:00 ] 127.0.0.1 /index.php/Model/add_table_column/table_id/28.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000778s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000878s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000564s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000648s ]
+SQL: SHOW COLUMNS FROM `cm_list` [ RunTime:0.002915s ]
+SQL: SELECT * FROM `cm_list`  [ RunTime:0.000209s ]
+SQL: SHOW COLUMNS FROM `cm_table` [ RunTime:0.002899s ]
+SQL: SELECT * FROM `cm_table` WHERE ( table_id=28 ) LIMIT 1   [ RunTime:0.000212s ]
+SQL: select table_name from information_schema.tables where table_schema='mpcz'  [ RunTime:0.000521s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="admin"  AND table_schema = "mpcz" [ RunTime:0.003105s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="admin_access"  AND table_schema = "mpcz" [ RunTime:0.002655s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="admin_node"  AND table_schema = "mpcz" [ RunTime:0.002689s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="admin_role"  AND table_schema = "mpcz" [ RunTime:0.002712s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="admin_role_user"  AND table_schema = "mpcz" [ RunTime:0.002785s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="advertise"  AND table_schema = "mpcz" [ RunTime:0.003242s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="art_position"  AND table_schema = "mpcz" [ RunTime:0.002740s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="article"  AND table_schema = "mpcz" [ RunTime:0.002892s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="catalog"  AND table_schema = "mpcz" [ RunTime:0.002923s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="category"  AND table_schema = "mpcz" [ RunTime:0.002890s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="cm_list"  AND table_schema = "mpcz" [ RunTime:0.003178s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="cm_list_item"  AND table_schema = "mpcz" [ RunTime:0.003825s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="cm_table"  AND table_schema = "mpcz" [ RunTime:0.003032s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="cm_table_column"  AND table_schema = "mpcz" [ RunTime:0.003344s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="friend_links"  AND table_schema = "mpcz" [ RunTime:0.003275s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="others"  AND table_schema = "mpcz" [ RunTime:0.003223s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="product"  AND table_schema = "mpcz" [ RunTime:0.002953s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="relative_pro"  AND table_schema = "mpcz" [ RunTime:0.002656s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="web_baseinfo"  AND table_schema = "mpcz" [ RunTime:0.002860s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="website"  AND table_schema = "mpcz" [ RunTime:0.002649s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="worker"  AND table_schema = "mpcz" [ RunTime:0.002780s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: inputType C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 117 行.
+NOTIC: [8] Undefined variable: inputInfo C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 505 行.
+NOTIC: [8] Undefined variable: inputInfo C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 507 行.
+NOTIC: [8] Undefined variable: inputInfo C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 514 行.
+NOTIC: [8] Undefined variable: inputInfo C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 515 行.
+NOTIC: [8] Undefined variable: inputInfo C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 523 行.
+NOTIC: [8] Undefined variable: inputInfo C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 538 行.
+NOTIC: [2] Invalid argument supplied for foreach() C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 538 行.
+NOTIC: [8] Undefined variable: val C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 542 行.
+NOTIC: [8] Undefined variable: val C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 543 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.012333s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012427s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000568s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000426s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000294s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000476s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001983s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000507s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000585s ]
+
+[ 2015-07-01T14:23:37+08:00 ] 127.0.0.1 /index.php/Model/do_add_column.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000738s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000846s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000583s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000681s ]
+SQL: SHOW COLUMNS FROM `cm_table` [ RunTime:0.003005s ]
+SQL: SELECT * FROM `cm_table` WHERE ( table_id=28 ) LIMIT 1   [ RunTime:0.000267s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="worker"  AND table_schema = "mpcz" [ RunTime:0.002825s ]
+SQL: SHOW COLUMNS FROM `cm_table_column` [ RunTime:0.003358s ]
+SQL: INSERT INTO `cm_table_column` (`table_id`,`column_name`,`column_type`,`is_add`,`is_edit`,`column_default_value`,`column_desc`,`column_help`,`column_error_message`,`is_validate`,`min_length`,`max_length`,`validate_regexp`) VALUES (28,'phone','singleErea',1,1,'','手机','','',0,0,999999,'0') [ RunTime:0.000279s ]
+SQL: ALTER TABLE worker ADD phone VARCHAR( 255 )  NOT NULL DEFAULT ''   [ RunTime:0.193814s ]
+NOTIC: [2] mysql_num_rows() expects parameter 1 to be resource, boolean given C:\wamp\www\thinkphpProject\mycms\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 109 行.
+NOTIC: [2] mysql_free_result() expects parameter 1 to be resource, boolean given C:\wamp\www\thinkphpProject\mycms\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 80 行.
+SQL: UPDATE `cm_table_column` SET `cm_table_column_sort`=204 WHERE ( tab_col_id=204 ) [ RunTime:0.000303s ]
+
+[ 2015-07-01T14:23:38+08:00 ] 127.0.0.1 /index.php/Model/table_column_list/table_id/28.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001549s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001773s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000711s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000841s ]
+SQL: SHOW COLUMNS FROM `cm_table_column` [ RunTime:0.003218s ]
+SQL: SELECT * FROM `cm_table_column` WHERE ( table_id=28 ) ORDER BY cm_table_column_sort ASC  [ RunTime:0.000408s ]
+SQL: SHOW COLUMNS FROM `cm_table` [ RunTime:0.002759s ]
+SQL: SELECT * FROM `cm_table` WHERE ( table_id=28 ) LIMIT 1   [ RunTime:0.000201s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.017919s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018027s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000548s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000414s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000299s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000480s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001958s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000520s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000597s ]
+
+[ 2015-07-01T14:23:39+08:00 ] 127.0.0.1 /index.php/Model/add_table_column/table_id/28.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000757s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000868s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000578s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000672s ]
+SQL: SHOW COLUMNS FROM `cm_list` [ RunTime:0.002800s ]
+SQL: SELECT * FROM `cm_list`  [ RunTime:0.000260s ]
+SQL: SHOW COLUMNS FROM `cm_table` [ RunTime:0.002852s ]
+SQL: SELECT * FROM `cm_table` WHERE ( table_id=28 ) LIMIT 1   [ RunTime:0.000192s ]
+SQL: select table_name from information_schema.tables where table_schema='mpcz'  [ RunTime:0.000486s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="admin"  AND table_schema = "mpcz" [ RunTime:0.002754s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="admin_access"  AND table_schema = "mpcz" [ RunTime:0.002687s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="admin_node"  AND table_schema = "mpcz" [ RunTime:0.002731s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="admin_role"  AND table_schema = "mpcz" [ RunTime:0.002973s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="admin_role_user"  AND table_schema = "mpcz" [ RunTime:0.002716s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="advertise"  AND table_schema = "mpcz" [ RunTime:0.003066s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="art_position"  AND table_schema = "mpcz" [ RunTime:0.004322s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="article"  AND table_schema = "mpcz" [ RunTime:0.003448s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="catalog"  AND table_schema = "mpcz" [ RunTime:0.002999s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="category"  AND table_schema = "mpcz" [ RunTime:0.003015s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="cm_list"  AND table_schema = "mpcz" [ RunTime:0.002831s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="cm_list_item"  AND table_schema = "mpcz" [ RunTime:0.002761s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="cm_table"  AND table_schema = "mpcz" [ RunTime:0.002984s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="cm_table_column"  AND table_schema = "mpcz" [ RunTime:0.003343s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="friend_links"  AND table_schema = "mpcz" [ RunTime:0.003436s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="others"  AND table_schema = "mpcz" [ RunTime:0.003635s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="product"  AND table_schema = "mpcz" [ RunTime:0.002948s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="relative_pro"  AND table_schema = "mpcz" [ RunTime:0.002617s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="web_baseinfo"  AND table_schema = "mpcz" [ RunTime:0.002894s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="website"  AND table_schema = "mpcz" [ RunTime:0.002908s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="worker"  AND table_schema = "mpcz" [ RunTime:0.002743s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: inputType C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 117 行.
+NOTIC: [8] Undefined variable: inputInfo C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 505 行.
+NOTIC: [8] Undefined variable: inputInfo C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 507 行.
+NOTIC: [8] Undefined variable: inputInfo C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 514 行.
+NOTIC: [8] Undefined variable: inputInfo C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 515 行.
+NOTIC: [8] Undefined variable: inputInfo C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 523 行.
+NOTIC: [8] Undefined variable: inputInfo C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 538 行.
+NOTIC: [2] Invalid argument supplied for foreach() C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 538 行.
+NOTIC: [8] Undefined variable: val C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 542 行.
+NOTIC: [8] Undefined variable: val C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 543 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.012892s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013010s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000852s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000696s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000392s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000509s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002821s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000658s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000853s ]
+
+[ 2015-07-01T14:24:00+08:00 ] 127.0.0.1 /index.php/Model/do_add_column.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001380s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001515s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001114s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001251s ]
+SQL: SHOW COLUMNS FROM `cm_table` [ RunTime:0.002889s ]
+SQL: SELECT * FROM `cm_table` WHERE ( table_id=28 ) LIMIT 1   [ RunTime:0.000245s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="worker"  AND table_schema = "mpcz" [ RunTime:0.003245s ]
+SQL: SHOW COLUMNS FROM `cm_table_column` [ RunTime:0.003561s ]
+SQL: INSERT INTO `cm_table_column` (`table_id`,`column_name`,`column_type`,`is_add`,`is_edit`,`column_default_value`,`column_desc`,`column_help`,`column_error_message`,`is_validate`,`min_length`,`max_length`,`validate_regexp`) VALUES (28,'amegent','singleErea',1,1,'','紧急联系电话','','',0,0,999999,'0') [ RunTime:0.000347s ]
+SQL: ALTER TABLE worker ADD amegent VARCHAR( 255 )  NOT NULL DEFAULT ''   [ RunTime:0.174278s ]
+NOTIC: [2] mysql_num_rows() expects parameter 1 to be resource, boolean given C:\wamp\www\thinkphpProject\mycms\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 109 行.
+NOTIC: [2] mysql_free_result() expects parameter 1 to be resource, boolean given C:\wamp\www\thinkphpProject\mycms\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 80 行.
+SQL: UPDATE `cm_table_column` SET `cm_table_column_sort`=205 WHERE ( tab_col_id=205 ) [ RunTime:0.000397s ]
+
+[ 2015-07-01T14:24:01+08:00 ] 127.0.0.1 /index.php/Model/table_column_list/table_id/28.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000772s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000895s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000750s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000873s ]
+SQL: SHOW COLUMNS FROM `cm_table_column` [ RunTime:0.003915s ]
+SQL: SELECT * FROM `cm_table_column` WHERE ( table_id=28 ) ORDER BY cm_table_column_sort ASC  [ RunTime:0.000528s ]
+SQL: SHOW COLUMNS FROM `cm_table` [ RunTime:0.003068s ]
+SQL: SELECT * FROM `cm_table` WHERE ( table_id=28 ) LIMIT 1   [ RunTime:0.000307s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.018859s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018969s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000530s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000387s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000268s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000611s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002019s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000592s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000678s ]
+
+[ 2015-07-01T14:24:03+08:00 ] 127.0.0.1 /index.php/Model/add_table_column/table_id/28.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000787s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000896s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000572s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000688s ]
+SQL: SHOW COLUMNS FROM `cm_list` [ RunTime:0.002929s ]
+SQL: SELECT * FROM `cm_list`  [ RunTime:0.000233s ]
+SQL: SHOW COLUMNS FROM `cm_table` [ RunTime:0.002935s ]
+SQL: SELECT * FROM `cm_table` WHERE ( table_id=28 ) LIMIT 1   [ RunTime:0.000275s ]
+SQL: select table_name from information_schema.tables where table_schema='mpcz'  [ RunTime:0.000606s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="admin"  AND table_schema = "mpcz" [ RunTime:0.003429s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="admin_access"  AND table_schema = "mpcz" [ RunTime:0.002721s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="admin_node"  AND table_schema = "mpcz" [ RunTime:0.002722s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="admin_role"  AND table_schema = "mpcz" [ RunTime:0.003100s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="admin_role_user"  AND table_schema = "mpcz" [ RunTime:0.002771s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="advertise"  AND table_schema = "mpcz" [ RunTime:0.002876s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="art_position"  AND table_schema = "mpcz" [ RunTime:0.002678s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="article"  AND table_schema = "mpcz" [ RunTime:0.002824s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="catalog"  AND table_schema = "mpcz" [ RunTime:0.002980s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="category"  AND table_schema = "mpcz" [ RunTime:0.003077s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="cm_list"  AND table_schema = "mpcz" [ RunTime:0.003632s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="cm_list_item"  AND table_schema = "mpcz" [ RunTime:0.003034s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="cm_table"  AND table_schema = "mpcz" [ RunTime:0.002870s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="cm_table_column"  AND table_schema = "mpcz" [ RunTime:0.003757s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="friend_links"  AND table_schema = "mpcz" [ RunTime:0.002791s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="others"  AND table_schema = "mpcz" [ RunTime:0.002945s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="product"  AND table_schema = "mpcz" [ RunTime:0.002920s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="relative_pro"  AND table_schema = "mpcz" [ RunTime:0.002941s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="web_baseinfo"  AND table_schema = "mpcz" [ RunTime:0.003309s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="website"  AND table_schema = "mpcz" [ RunTime:0.003110s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="worker"  AND table_schema = "mpcz" [ RunTime:0.003165s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: inputType C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 117 行.
+NOTIC: [8] Undefined variable: inputInfo C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 505 行.
+NOTIC: [8] Undefined variable: inputInfo C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 507 行.
+NOTIC: [8] Undefined variable: inputInfo C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 514 行.
+NOTIC: [8] Undefined variable: inputInfo C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 515 行.
+NOTIC: [8] Undefined variable: inputInfo C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 523 行.
+NOTIC: [8] Undefined variable: inputInfo C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 538 行.
+NOTIC: [2] Invalid argument supplied for foreach() C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 538 行.
+NOTIC: [8] Undefined variable: val C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 542 行.
+NOTIC: [8] Undefined variable: val C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 543 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.012350s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012448s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000636s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000422s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000270s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000526s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002083s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000581s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000663s ]
+
+[ 2015-07-01T14:24:18+08:00 ] 127.0.0.1 /index.php/Model/do_add_column.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000739s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000837s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000573s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000658s ]
+SQL: SHOW COLUMNS FROM `cm_table` [ RunTime:0.003204s ]
+SQL: SELECT * FROM `cm_table` WHERE ( table_id=28 ) LIMIT 1   [ RunTime:0.000280s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="worker"  AND table_schema = "mpcz" [ RunTime:0.002975s ]
+SQL: SHOW COLUMNS FROM `cm_table_column` [ RunTime:0.003216s ]
+SQL: INSERT INTO `cm_table_column` (`table_id`,`column_name`,`column_type`,`is_add`,`is_edit`,`column_default_value`,`column_desc`,`column_help`,`column_error_message`,`is_validate`,`min_length`,`max_length`,`validate_regexp`) VALUES (28,'年龄','special',1,1,'','','','',0,0,999999,'0') [ RunTime:0.000435s ]
+SQL: ALTER TABLE worker ADD 年龄 INT  NOT NULL DEFAULT '0'   [ RunTime:0.146297s ]
+NOTIC: [2] mysql_num_rows() expects parameter 1 to be resource, boolean given C:\wamp\www\thinkphpProject\mycms\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 109 行.
+NOTIC: [2] mysql_free_result() expects parameter 1 to be resource, boolean given C:\wamp\www\thinkphpProject\mycms\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 80 行.
+SQL: UPDATE `cm_table_column` SET `cm_table_column_sort`=206 WHERE ( tab_col_id=206 ) [ RunTime:0.000230s ]
+
+[ 2015-07-01T14:24:19+08:00 ] 127.0.0.1 /index.php/Model/table_column_list/table_id/28.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000829s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000961s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.003083s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003201s ]
+SQL: SHOW COLUMNS FROM `cm_table_column` [ RunTime:0.003498s ]
+SQL: SELECT * FROM `cm_table_column` WHERE ( table_id=28 ) ORDER BY cm_table_column_sort ASC  [ RunTime:0.000453s ]
+SQL: SHOW COLUMNS FROM `cm_table` [ RunTime:0.002970s ]
+SQL: SELECT * FROM `cm_table` WHERE ( table_id=28 ) LIMIT 1   [ RunTime:0.000214s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.019215s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019325s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000539s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000391s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000270s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000454s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001870s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000486s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000562s ]
+
+[ 2015-07-01T14:24:21+08:00 ] 127.0.0.1 /index.php/Model/add_table_column/table_id/28.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002195s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002403s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001170s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001342s ]
+SQL: SHOW COLUMNS FROM `cm_list` [ RunTime:0.003045s ]
+SQL: SELECT * FROM `cm_list`  [ RunTime:0.000224s ]
+SQL: SHOW COLUMNS FROM `cm_table` [ RunTime:0.003043s ]
+SQL: SELECT * FROM `cm_table` WHERE ( table_id=28 ) LIMIT 1   [ RunTime:0.000221s ]
+SQL: select table_name from information_schema.tables where table_schema='mpcz'  [ RunTime:0.000510s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="admin"  AND table_schema = "mpcz" [ RunTime:0.003568s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="admin_access"  AND table_schema = "mpcz" [ RunTime:0.003024s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="admin_node"  AND table_schema = "mpcz" [ RunTime:0.003356s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="admin_role"  AND table_schema = "mpcz" [ RunTime:0.003367s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="admin_role_user"  AND table_schema = "mpcz" [ RunTime:0.002676s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="advertise"  AND table_schema = "mpcz" [ RunTime:0.002670s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="art_position"  AND table_schema = "mpcz" [ RunTime:0.002761s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="article"  AND table_schema = "mpcz" [ RunTime:0.002951s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="catalog"  AND table_schema = "mpcz" [ RunTime:0.002866s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="category"  AND table_schema = "mpcz" [ RunTime:0.003330s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="cm_list"  AND table_schema = "mpcz" [ RunTime:0.003108s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="cm_list_item"  AND table_schema = "mpcz" [ RunTime:0.002923s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="cm_table"  AND table_schema = "mpcz" [ RunTime:0.004237s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="cm_table_column"  AND table_schema = "mpcz" [ RunTime:0.003837s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="friend_links"  AND table_schema = "mpcz" [ RunTime:0.002991s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="others"  AND table_schema = "mpcz" [ RunTime:0.002945s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="product"  AND table_schema = "mpcz" [ RunTime:0.003170s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="relative_pro"  AND table_schema = "mpcz" [ RunTime:0.003066s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="web_baseinfo"  AND table_schema = "mpcz" [ RunTime:0.003015s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="website"  AND table_schema = "mpcz" [ RunTime:0.003017s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="worker"  AND table_schema = "mpcz" [ RunTime:0.002981s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: inputType C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 117 行.
+NOTIC: [8] Undefined variable: inputInfo C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 505 行.
+NOTIC: [8] Undefined variable: inputInfo C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 507 行.
+NOTIC: [8] Undefined variable: inputInfo C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 514 行.
+NOTIC: [8] Undefined variable: inputInfo C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 515 行.
+NOTIC: [8] Undefined variable: inputInfo C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 523 行.
+NOTIC: [8] Undefined variable: inputInfo C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 538 行.
+NOTIC: [2] Invalid argument supplied for foreach() C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 538 行.
+NOTIC: [8] Undefined variable: val C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 542 行.
+NOTIC: [8] Undefined variable: val C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 543 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.013721s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013816s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000638s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000484s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000358s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000543s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002238s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000575s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000658s ]
+
+[ 2015-07-01T14:24:41+08:00 ] 127.0.0.1 /index.php/Model/add_table_column/table_id/28.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001313s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001500s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001644s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001962s ]
+SQL: SHOW COLUMNS FROM `cm_list` [ RunTime:0.004255s ]
+SQL: SELECT * FROM `cm_list`  [ RunTime:0.000313s ]
+SQL: SHOW COLUMNS FROM `cm_table` [ RunTime:0.003602s ]
+SQL: SELECT * FROM `cm_table` WHERE ( table_id=28 ) LIMIT 1   [ RunTime:0.000293s ]
+SQL: select table_name from information_schema.tables where table_schema='mpcz'  [ RunTime:0.000650s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="admin"  AND table_schema = "mpcz" [ RunTime:0.004331s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="admin_access"  AND table_schema = "mpcz" [ RunTime:0.003356s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="admin_node"  AND table_schema = "mpcz" [ RunTime:0.003488s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="admin_role"  AND table_schema = "mpcz" [ RunTime:0.004300s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="admin_role_user"  AND table_schema = "mpcz" [ RunTime:0.003400s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="advertise"  AND table_schema = "mpcz" [ RunTime:0.004377s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="art_position"  AND table_schema = "mpcz" [ RunTime:0.003803s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="article"  AND table_schema = "mpcz" [ RunTime:0.004180s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="catalog"  AND table_schema = "mpcz" [ RunTime:0.003195s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="category"  AND table_schema = "mpcz" [ RunTime:0.003225s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="cm_list"  AND table_schema = "mpcz" [ RunTime:0.002814s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="cm_list_item"  AND table_schema = "mpcz" [ RunTime:0.003144s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="cm_table"  AND table_schema = "mpcz" [ RunTime:0.003954s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="cm_table_column"  AND table_schema = "mpcz" [ RunTime:0.003888s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="friend_links"  AND table_schema = "mpcz" [ RunTime:0.002794s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="others"  AND table_schema = "mpcz" [ RunTime:0.002903s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="product"  AND table_schema = "mpcz" [ RunTime:0.003194s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="relative_pro"  AND table_schema = "mpcz" [ RunTime:0.002980s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="web_baseinfo"  AND table_schema = "mpcz" [ RunTime:0.005869s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="website"  AND table_schema = "mpcz" [ RunTime:0.002860s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="worker"  AND table_schema = "mpcz" [ RunTime:0.003110s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: inputType C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 117 行.
+NOTIC: [8] Undefined variable: inputInfo C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 505 行.
+NOTIC: [8] Undefined variable: inputInfo C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 507 行.
+NOTIC: [8] Undefined variable: inputInfo C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 514 行.
+NOTIC: [8] Undefined variable: inputInfo C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 515 行.
+NOTIC: [8] Undefined variable: inputInfo C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 523 行.
+NOTIC: [8] Undefined variable: inputInfo C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 538 行.
+NOTIC: [2] Invalid argument supplied for foreach() C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 538 行.
+NOTIC: [8] Undefined variable: val C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 542 行.
+NOTIC: [8] Undefined variable: val C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\6a6810e96a46e708623eee76d901988e.php 第 543 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.013090s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013207s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000819s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000488s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000324s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000542s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002400s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000573s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000653s ]
+
+[ 2015-07-01T14:24:47+08:00 ] 127.0.0.1 /index.php/Model/do_add_column.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000749s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000853s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000614s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000709s ]
+SQL: SHOW COLUMNS FROM `cm_table` [ RunTime:0.002947s ]
+SQL: SELECT * FROM `cm_table` WHERE ( table_id=28 ) LIMIT 1   [ RunTime:0.000254s ]
+SQL: select  column_name, column_comment  from Information_schema.columns  where table_Name ="worker"  AND table_schema = "mpcz" [ RunTime:0.002882s ]
+SQL: SHOW COLUMNS FROM `cm_table_column` [ RunTime:0.003561s ]
+SQL: INSERT INTO `cm_table_column` (`table_id`,`column_name`,`column_type`,`is_add`,`is_edit`,`column_default_value`,`column_desc`,`column_help`,`column_error_message`,`is_validate`,`min_length`,`max_length`,`validate_regexp`) VALUES (28,'qq','singleErea',1,1,'','QQ','','',0,0,999999,'0') [ RunTime:0.000295s ]
+SQL: ALTER TABLE worker ADD qq VARCHAR( 255 )  NOT NULL DEFAULT ''   [ RunTime:0.290408s ]
+NOTIC: [2] mysql_num_rows() expects parameter 1 to be resource, boolean given C:\wamp\www\thinkphpProject\mycms\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 109 行.
+NOTIC: [2] mysql_free_result() expects parameter 1 to be resource, boolean given C:\wamp\www\thinkphpProject\mycms\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 80 行.
+SQL: UPDATE `cm_table_column` SET `cm_table_column_sort`=207 WHERE ( tab_col_id=207 ) [ RunTime:0.000435s ]
+
+[ 2015-07-01T14:24:48+08:00 ] 127.0.0.1 /index.php/Model/table_column_list/table_id/28.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001327s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001518s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002577s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002781s ]
+SQL: SHOW COLUMNS FROM `cm_table_column` [ RunTime:0.003494s ]
+SQL: SELECT * FROM `cm_table_column` WHERE ( table_id=28 ) ORDER BY cm_table_column_sort ASC  [ RunTime:0.000449s ]
+SQL: SHOW COLUMNS FROM `cm_table` [ RunTime:0.002770s ]
+SQL: SELECT * FROM `cm_table` WHERE ( table_id=28 ) LIMIT 1   [ RunTime:0.000196s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.019162s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019272s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000595s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000583s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000484s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000772s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002752s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000571s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000650s ]
+
+[ 2015-07-01T14:24:54+08:00 ] 127.0.0.1 /index.php/Model/Test_from/table_id/28.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000910s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001013s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000611s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000696s ]
+SQL: SHOW COLUMNS FROM `cm_table` [ RunTime:0.002932s ]
+SQL: SELECT * FROM `cm_table` WHERE ( table_id=28 ) LIMIT 1   [ RunTime:0.000243s ]
+SQL: SELECT * FROM `cm_table` WHERE ( table_name="worker" ) LIMIT 1   [ RunTime:0.000174s ]
+SQL: SHOW COLUMNS FROM `cm_table_column` [ RunTime:0.003211s ]
+SQL: SELECT * FROM `cm_table_column` WHERE ( table_id=28 AND (is_add=1 OR column_type="primaryKey") ) ORDER BY cm_table_column_sort ASC,tab_col_id ASC  [ RunTime:0.000469s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.006916s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007030s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000470s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000542s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000373s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000556s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002179s ]
+NOTIC: [8] Constant THEME_NAME already defined C:\wamp\www\thinkphpProject\mycms\ThinkPHP\Lib\Core\View.class.php 第 223 行.
+NOTIC: [8] Constant THEME_PATH already defined C:\wamp\www\thinkphpProject\mycms\ThinkPHP\Lib\Core\View.class.php 第 174 行.
+NOTIC: [8] Constant APP_TMPL_PATH already defined C:\wamp\www\thinkphpProject\mycms\ThinkPHP\Lib\Core\View.class.php 第 175 行.
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.002038s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.002742s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000071s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000081s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000017s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000123s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.002694s ]
+NOTIC: [8] Constant THEME_NAME already defined C:\wamp\www\thinkphpProject\mycms\ThinkPHP\Lib\Core\View.class.php 第 223 行.
+NOTIC: [8] Constant THEME_PATH already defined C:\wamp\www\thinkphpProject\mycms\ThinkPHP\Lib\Core\View.class.php 第 174 行.
+NOTIC: [8] Constant APP_TMPL_PATH already defined C:\wamp\www\thinkphpProject\mycms\ThinkPHP\Lib\Core\View.class.php 第 175 行.
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.002051s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.005976s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000073s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000081s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000018s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000122s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.005943s ]
+NOTIC: [8] Constant THEME_NAME already defined C:\wamp\www\thinkphpProject\mycms\ThinkPHP\Lib\Core\View.class.php 第 223 行.
+NOTIC: [8] Constant THEME_PATH already defined C:\wamp\www\thinkphpProject\mycms\ThinkPHP\Lib\Core\View.class.php 第 174 行.
+NOTIC: [8] Constant APP_TMPL_PATH already defined C:\wamp\www\thinkphpProject\mycms\ThinkPHP\Lib\Core\View.class.php 第 175 行.
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.002514s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.009186s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000082s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000082s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000019s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000124s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.009640s ]
+NOTIC: [8] Constant THEME_NAME already defined C:\wamp\www\thinkphpProject\mycms\ThinkPHP\Lib\Core\View.class.php 第 223 行.
+NOTIC: [8] Constant THEME_PATH already defined C:\wamp\www\thinkphpProject\mycms\ThinkPHP\Lib\Core\View.class.php 第 174 行.
+NOTIC: [8] Constant APP_TMPL_PATH already defined C:\wamp\www\thinkphpProject\mycms\ThinkPHP\Lib\Core\View.class.php 第 175 行.
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.002120s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.012938s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000072s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000081s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000018s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000123s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.012971s ]
+NOTIC: [8] Constant THEME_NAME already defined C:\wamp\www\thinkphpProject\mycms\ThinkPHP\Lib\Core\View.class.php 第 223 行.
+NOTIC: [8] Constant THEME_PATH already defined C:\wamp\www\thinkphpProject\mycms\ThinkPHP\Lib\Core\View.class.php 第 174 行.
+NOTIC: [8] Constant APP_TMPL_PATH already defined C:\wamp\www\thinkphpProject\mycms\ThinkPHP\Lib\Core\View.class.php 第 175 行.
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.002067s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.016284s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000071s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000087s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000017s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000122s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.016264s ]
+NOTIC: [8] Undefined variable: str C:\wamp\www\thinkphpProject\mycms\ThinkPHP\Extend\Vendor\Form\Form2.php 第 240 行.
+NOTIC: [8] Constant THEME_NAME already defined C:\wamp\www\thinkphpProject\mycms\ThinkPHP\Lib\Core\View.class.php 第 223 行.
+NOTIC: [8] Constant THEME_PATH already defined C:\wamp\www\thinkphpProject\mycms\ThinkPHP\Lib\Core\View.class.php 第 174 行.
+NOTIC: [8] Constant APP_TMPL_PATH already defined C:\wamp\www\thinkphpProject\mycms\ThinkPHP\Lib\Core\View.class.php 第 175 行.
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.009342s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.019828s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000101s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000079s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000017s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000116s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.027096s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000684s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000762s ]
+
+[ 2015-07-01T14:26:37+08:00 ] 127.0.0.1 /index.php/Model/ajax_set_is.html?table_name=cm_table_column&column_name=is_list&rowid=201&val=1
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001345s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001480s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000781s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000875s ]
+SQL: SHOW COLUMNS FROM `cm_table_column` [ RunTime:0.003450s ]
+SQL: UPDATE `cm_table_column` SET `is_list`=1 WHERE ( `tab_col_id` = 201 ) [ RunTime:0.000304s ]
+
+[ 2015-07-01T14:26:38+08:00 ] 127.0.0.1 /index.php/Model/ajax_set_is.html?table_name=cm_table_column&column_name=is_list&rowid=201&val=0
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001337s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001523s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000625s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000721s ]
+SQL: SHOW COLUMNS FROM `cm_table_column` [ RunTime:0.003549s ]
+SQL: UPDATE `cm_table_column` SET `is_list`=0 WHERE ( `tab_col_id` = 201 ) [ RunTime:0.000267s ]
+
+[ 2015-07-01T14:26:39+08:00 ] 127.0.0.1 /index.php/Model/ajax_set_is.html?table_name=cm_table_column&column_name=is_list&rowid=201&val=1
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000884s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001006s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000669s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000760s ]
+SQL: SHOW COLUMNS FROM `cm_table_column` [ RunTime:0.004649s ]
+SQL: UPDATE `cm_table_column` SET `is_list`=1 WHERE ( `tab_col_id` = 201 ) [ RunTime:0.000366s ]
+
+[ 2015-07-01T14:26:40+08:00 ] 127.0.0.1 /index.php/Model/ajax_set_is.html?table_name=cm_table_column&column_name=is_list&rowid=201&val=0
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000677s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000774s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000519s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000587s ]
+SQL: SHOW COLUMNS FROM `cm_table_column` [ RunTime:0.003270s ]
+SQL: UPDATE `cm_table_column` SET `is_list`=0 WHERE ( `tab_col_id` = 201 ) [ RunTime:0.000314s ]
+
+[ 2015-07-01T14:26:41+08:00 ] 127.0.0.1 /index.php/Model/ajax_set_is.html?table_name=cm_table_column&column_name=is_list&rowid=201&val=1
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000731s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000834s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000511s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000582s ]
+SQL: SHOW COLUMNS FROM `cm_table_column` [ RunTime:0.003838s ]
+SQL: UPDATE `cm_table_column` SET `is_list`=1 WHERE ( `tab_col_id` = 201 ) [ RunTime:0.000262s ]
+
+[ 2015-07-01T14:26:43+08:00 ] 127.0.0.1 /index.php/Model/ajax_set_is.html?table_name=cm_table_column&column_name=is_list&rowid=201&val=0
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001413s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001615s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001124s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001292s ]
+SQL: SHOW COLUMNS FROM `cm_table_column` [ RunTime:0.003288s ]
+SQL: UPDATE `cm_table_column` SET `is_list`=0 WHERE ( `tab_col_id` = 201 ) [ RunTime:0.000262s ]
+
+[ 2015-07-01T14:26:44+08:00 ] 127.0.0.1 /index.php/Model/ajax_set_is.html?table_name=cm_table_column&column_name=is_list&rowid=201&val=1
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001423s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001613s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001095s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001240s ]
+SQL: SHOW COLUMNS FROM `cm_table_column` [ RunTime:0.006713s ]
+SQL: UPDATE `cm_table_column` SET `is_list`=1 WHERE ( `tab_col_id` = 201 ) [ RunTime:0.000520s ]
+
+[ 2015-07-01T14:26:49+08:00 ] 127.0.0.1 /index.php/Model/table_list.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000724s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000833s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000584s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000668s ]
+SQL: SHOW COLUMNS FROM `cm_table` [ RunTime:0.002923s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\wamp\www\thinkphpProject\mycms\ThinkPHP\Lib\Core\Db.class.php 第 424 行.
+SQL: SELECT * FROM `cm_table` ORDER BY table_id DESC  [ RunTime:0.000348s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.020841s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020966s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000688s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000716s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000471s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000878s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003068s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000871s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000987s ]
+
+[ 2015-07-01T14:26:53+08:00 ] 127.0.0.1 /index.php/Website/Website_list
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000757s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000861s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000533s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000624s ]
+SQL: SHOW COLUMNS FROM `cm_table` [ RunTime:0.003558s ]
+SQL: SELECT * FROM `cm_table` WHERE ( `table_name` = 'website' ) LIMIT 1   [ RunTime:0.000399s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\wamp\www\thinkphpProject\mycms\ThinkPHP\Extend\Vendor\Form\TableList.php 第 50 行.
+SQL: SELECT * FROM `cm_table` WHERE ( `table_name` = 'Website' ) LIMIT 1   [ RunTime:0.000326s ]
+NOTIC: [8] Undefined index: otherParams C:\wamp\www\thinkphpProject\mycms\ThinkPHP\Extend\Vendor\Form\TableList.php 第 27 行.
+NOTIC: [8] Undefined index: otherParams C:\wamp\www\thinkphpProject\mycms\ThinkPHP\Extend\Vendor\Form\TableList.php 第 27 行.
+SQL: SHOW COLUMNS FROM `cm_table_column` [ RunTime:0.003592s ]
+SQL: SELECT * FROM `cm_table_column` WHERE ( `table_id` = 11 ) AND ( `is_search` = 1 )  [ RunTime:0.000482s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\wamp\www\thinkphpProject\mycms\ThinkPHP\Extend\Vendor\Form\TableList.php 第 144 行.
+SQL: SELECT * FROM `cm_table` WHERE ( table_name="Website" ) LIMIT 1   [ RunTime:0.000212s ]
+SQL: SELECT * FROM `cm_table_column` WHERE ( table_id=11 AND is_list=1 ) ORDER BY cm_table_column_sort ASC,tab_col_id ASC  [ RunTime:0.000372s ]
+SQL: SHOW COLUMNS FROM `website` [ RunTime:0.015158s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `website` LIMIT 1   [ RunTime:0.000158s ]
+SQL: SELECT * FROM `website` ORDER BY website_sort LIMIT 0,12   [ RunTime:0.000446s ]
+NOTIC: [8] Undefined index: otherParams C:\wamp\www\thinkphpProject\mycms\ThinkPHP\Extend\Vendor\Form\TableList.php 第 479 行.
+NOTIC: [2] Invalid argument supplied for foreach() C:\wamp\www\thinkphpProject\mycms\ThinkPHP\Extend\Vendor\Form\TableList.php 第 479 行.
+NOTIC: [8] Undefined index: otherParams C:\wamp\www\thinkphpProject\mycms\ThinkPHP\Extend\Vendor\Form\TableList.php 第 479 行.
+NOTIC: [2] Invalid argument supplied for foreach() C:\wamp\www\thinkphpProject\mycms\ThinkPHP\Extend\Vendor\Form\TableList.php 第 479 行.
+NOTIC: [8] Undefined index: otherParams C:\wamp\www\thinkphpProject\mycms\ThinkPHP\Extend\Vendor\Form\TableList.php 第 479 行.
+NOTIC: [2] Invalid argument supplied for foreach() C:\wamp\www\thinkphpProject\mycms\ThinkPHP\Extend\Vendor\Form\TableList.php 第 479 行.
+NOTIC: [8] Undefined index: otherParams C:\wamp\www\thinkphpProject\mycms\ThinkPHP\Extend\Vendor\Form\TableList.php 第 479 行.
+NOTIC: [2] Invalid argument supplied for foreach() C:\wamp\www\thinkphpProject\mycms\ThinkPHP\Extend\Vendor\Form\TableList.php 第 479 行.
+NOTIC: [8] Undefined index: otherParams C:\wamp\www\thinkphpProject\mycms\ThinkPHP\Extend\Vendor\Form\TableList.php 第 479 行.
+NOTIC: [2] Invalid argument supplied for foreach() C:\wamp\www\thinkphpProject\mycms\ThinkPHP\Extend\Vendor\Form\TableList.php 第 479 行.
+NOTIC: [8] Undefined index: otherParams C:\wamp\www\thinkphpProject\mycms\ThinkPHP\Extend\Vendor\Form\TableList.php 第 479 行.
+NOTIC: [2] Invalid argument supplied for foreach() C:\wamp\www\thinkphpProject\mycms\ThinkPHP\Extend\Vendor\Form\TableList.php 第 479 行.
+NOTIC: [8] Use of undefined constant __PUBLIC__ - assumed '__PUBLIC__' C:\wamp\www\thinkphpProject\mycms\ThinkPHP\Extend\Vendor\Form\TableList.php 第 499 行.
+NOTIC: [8] Use of undefined constant __PUBLIC__ - assumed '__PUBLIC__' C:\wamp\www\thinkphpProject\mycms\ThinkPHP\Extend\Vendor\Form\TableList.php 第 500 行.
+SQL: SELECT * FROM `cm_table` WHERE ( `table_name` = 'website' ) LIMIT 1   [ RunTime:0.000303s ]
+SQL: SELECT * FROM `cm_table_column` WHERE ( `table_id` = 11 ) AND ( `column_type` = 'foreignKey' )  [ RunTime:0.000367s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\wamp\www\thinkphpProject\mycms\ThinkPHP\Extend\Vendor\Form\TableList.php 第 690 行.
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.015857s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015971s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000945s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000979s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000356s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000465s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003002s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000533s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000612s ]
+
+[ 2015-07-01T14:26:55+08:00 ] 127.0.0.1 /index.php/Admin/role
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000756s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000865s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000569s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000658s ]
+SQL: SHOW COLUMNS FROM `admin_role` [ RunTime:0.006232s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\wamp\www\thinkphpProject\mycms\ThinkPHP\Lib\Core\Db.class.php 第 424 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `admin_role` LIMIT 1   [ RunTime:0.000317s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\wamp\www\thinkphpProject\mycms\ThinkPHP\Lib\Core\Db.class.php 第 424 行.
+SQL: SELECT * FROM `admin_role` LIMIT 0,12   [ RunTime:0.000231s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.015904s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016036s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000430s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000387s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000281s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000444s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001762s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000513s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000591s ]
+
+[ 2015-07-01T14:26:55+08:00 ] 127.0.0.1 /index.php/Model/table_list.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001491s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001690s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001210s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001392s ]
+SQL: SHOW COLUMNS FROM `cm_table` [ RunTime:0.002910s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\wamp\www\thinkphpProject\mycms\ThinkPHP\Lib\Core\Db.class.php 第 424 行.
+SQL: SELECT * FROM `cm_table` ORDER BY table_id DESC  [ RunTime:0.000353s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.019115s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019226s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000581s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000619s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000372s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000542s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002432s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000851s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001003s ]
+
+[ 2015-07-01T14:27:01+08:00 ] 127.0.0.1 /index.php/Model/table_column_list/table_id/28.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000750s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000866s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000697s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000803s ]
+SQL: SHOW COLUMNS FROM `cm_table_column` [ RunTime:0.003319s ]
+SQL: SELECT * FROM `cm_table_column` WHERE ( table_id=28 ) ORDER BY cm_table_column_sort ASC  [ RunTime:0.000568s ]
+SQL: SHOW COLUMNS FROM `cm_table` [ RunTime:0.003006s ]
+SQL: SELECT * FROM `cm_table` WHERE ( table_id=28 ) LIMIT 1   [ RunTime:0.000234s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.020425s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020536s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000796s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000493s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000289s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000474s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002309s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000529s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000611s ]
+
+[ 2015-07-01T14:27:47+08:00 ] 127.0.0.1 /index.php/Model/edit_column/tab_col_id/201/table_id/28.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000709s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000812s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000524s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000608s ]
+SQL: SHOW COLUMNS FROM `cm_table_column` [ RunTime:0.003281s ]
+SQL: SELECT * FROM `cm_table_column` WHERE ( tab_col_id=201 ) LIMIT 1   [ RunTime:0.000346s ]
+SQL: SHOW COLUMNS FROM `cm_table` [ RunTime:0.003001s ]
+SQL: SELECT * FROM `cm_table` WHERE ( table_id=28 ) LIMIT 1   [ RunTime:0.000260s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: column_sort C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\1478b334bbb46a53f70a1b6ba2297bbe.php 第 134 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.023458s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023594s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000492s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000421s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000344s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000493s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001968s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000543s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000620s ]
+
+[ 2015-07-01T14:28:07+08:00 ] 127.0.0.1 /index.php/Model/edit_column/tab_col_id/201/table_id/28.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001677s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001830s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000552s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000641s ]
+SQL: SHOW COLUMNS FROM `cm_table_column` [ RunTime:0.003334s ]
+SQL: SELECT * FROM `cm_table_column` WHERE ( tab_col_id=201 ) LIMIT 1   [ RunTime:0.000317s ]
+SQL: SHOW COLUMNS FROM `cm_table` [ RunTime:0.002898s ]
+SQL: SELECT * FROM `cm_table` WHERE ( table_id=28 ) LIMIT 1   [ RunTime:0.000228s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: column_sort C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\1478b334bbb46a53f70a1b6ba2297bbe.php 第 134 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.010891s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010994s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000415s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000385s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000273s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000448s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001736s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000510s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000587s ]
+
+[ 2015-07-01T14:28:10+08:00 ] 127.0.0.1 /index.php/Model/ajax_set_is.html?table_name=cm_table_column&column_name=is_search&rowid=202&val=1
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001381s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001584s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001065s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001221s ]
+SQL: SHOW COLUMNS FROM `cm_table_column` [ RunTime:0.004799s ]
+SQL: UPDATE `cm_table_column` SET `is_search`=1 WHERE ( `tab_col_id` = 202 ) [ RunTime:0.000279s ]
+
+[ 2015-07-01T14:28:11+08:00 ] 127.0.0.1 /index.php/Model/ajax_set_is.html?table_name=cm_table_column&column_name=is_search&rowid=202&val=0
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000761s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000867s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000618s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000694s ]
+SQL: SHOW COLUMNS FROM `cm_table_column` [ RunTime:0.003899s ]
+SQL: UPDATE `cm_table_column` SET `is_search`=0 WHERE ( `tab_col_id` = 202 ) [ RunTime:0.000326s ]
+
+[ 2015-07-01T14:28:12+08:00 ] 127.0.0.1 /index.php/Model/edit_column/tab_col_id/203/table_id/28.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000702s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000809s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000629s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000724s ]
+SQL: SHOW COLUMNS FROM `cm_table_column` [ RunTime:0.003391s ]
+SQL: SELECT * FROM `cm_table_column` WHERE ( tab_col_id=203 ) LIMIT 1   [ RunTime:0.000329s ]
+SQL: SHOW COLUMNS FROM `cm_table` [ RunTime:0.002927s ]
+SQL: SELECT * FROM `cm_table` WHERE ( table_id=28 ) LIMIT 1   [ RunTime:0.000295s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: column_sort C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\1478b334bbb46a53f70a1b6ba2297bbe.php 第 134 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.010350s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010451s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000441s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000413s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000280s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000470s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001820s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000528s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000607s ]
+
+[ 2015-07-01T14:30:05+08:00 ] 127.0.0.1 /index.php/Model/edit_column/tab_col_id/205/table_id/28.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000876s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000989s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000617s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000704s ]
+SQL: SHOW COLUMNS FROM `cm_table_column` [ RunTime:0.028559s ]
+SQL: SELECT * FROM `cm_table_column` WHERE ( tab_col_id=205 ) LIMIT 1   [ RunTime:0.000371s ]
+SQL: SHOW COLUMNS FROM `cm_table` [ RunTime:0.003127s ]
+SQL: SELECT * FROM `cm_table` WHERE ( table_id=28 ) LIMIT 1   [ RunTime:0.000253s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: column_sort C:\wamp\www\thinkphpProject\mycms\Admin\Runtime\Cache\1478b334bbb46a53f70a1b6ba2297bbe.php 第 134 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.012002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012111s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000640s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000650s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000443s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000640s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002616s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000696s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000781s ]
+
