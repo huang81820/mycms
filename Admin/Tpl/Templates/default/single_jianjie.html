@@ -1,0 +1,97 @@
+<include file="./Admin/Tpl/Templates/default/header.html" />
+
+<script>
+    $(document).ready(function(){
+        addressInit('Select1', 'Select2', 'Select3');
+
+    });
+
+</script>
+
+<div class="md20"></div>
+
+<ul class="fangan_ul">
+
+	<li><a href="__APP__/Content/lists/cat_id/105" class="fangan_ul_a_d <?php if(cat_id()==105) {echo 'fangan_li_nor'; } ?>">美派简介</a></li>
+	<li><a href="__APP__/Content/lists/cat_id/106" class="fangan_ul_a_d <?php if(cat_id()==106) {echo 'fangan_li_nor'; } ?>">品牌背景</a></li>
+	<li><a href="__APP__/Content/lists/cat_id/107" class="fangan_ul_a_d <?php if(cat_id()==107) {echo 'fangan_li_nor'; } ?>">美派新闻</a></li>
+	<li><a href="http://www.daltile.com" target="_blank" class="fangan_ul_a_d">美国达泰瓷砖</a></li>
+
+
+</ul>
+
+<div class="md30"></div>
+
+
+<div class="site_yrl">{$site_nav}</div>
+
+<div class="md30"></div>
+	<?php $art = cat2article(cat_id(),$is_all=1,$num=10,$order='no'); ?>
+<div class="single_center" style="min-height:400px;">
+	<p class="mei_jian_title">{$art['lists'][0]['title']}</p>
+	
+	<div class="single_contetn" >
+		<div class="md30"></div>
+		{$art['lists'][0]['content']}
+		
+		
+		<div class="clear"></div>
+	</div>
+	<div class="clear"></div>
+	
+	<?php if(cat_id()==109){?>
+
+    <form action="__APP__/Content/liu_yan" method="post">
+	<div class="formsub">
+		<div class="form_left">
+            <div class="input_row">
+                <div class="input_label">姓名：</div>
+                <input type="text" name="name"/>
+            </div>
+
+            <div class="input_row">
+                <div class="input_label">电话：</div>
+                <input type="text" name="tel"/>
+            </div>
+
+            <div class="input_row">
+                <div class="input_label">QQ：</div>
+                <input type="text" name="qq"/>
+            </div>
+
+            <div class="input_row">
+                <div class="input_label">E-mail:</div>
+                <input type="text" name="email"/>
+            </div>
+
+            <div class="input_row">
+                <div class="input_label">加盟地址：</div>
+               <div class="area_list">
+                   省：<select id="Select1" name="sheng"></select>
+                   市：<select id="Select2" name="shi"></select>
+                   区：<select id="Select3" name="qu"></select>
+               </div>
+            </div>
+        </div>
+		<div class="form_right">
+            <div class="liu_nei">
+
+                *留言内容
+            </div>
+            <textarea rows="7" cols="57" name="content"></textarea>
+
+            <div class="md10"></div>
+
+            <input type="submit" value="提交" class="sub_btnsdf"/>
+        </div>
+	</div>
+    </form>
+    <?php } ?>
+
+</div>
+
+
+
+
+
+<include file="./Admin/Tpl/Templates/default/footer.html" />

@@ -1,0 +1,42 @@
+<include file="./Admin/Tpl/Templates/default/header.html" />
+
+<div class="md20"></div>
+
+<ul class="fangan_ul">
+
+	<li><a href="__APP__/Content/lists/cat_id/105" class="fangan_ul_a_d <?php if(cat_id()==105) {echo 'fangan_li_nor'; } ?>">美派简介</a></li>
+	<li><a href="__APP__/Content/lists/cat_id/106" class="fangan_ul_a_d <?php if(cat_id()==106) {echo 'fangan_li_nor'; } ?>">品牌背景</a></li>
+	<li><a href="__APP__/Content/lists/cat_id/107" class="fangan_ul_a_d <?php if(cat_id()==107) {echo 'fangan_li_nor'; } ?>">美派新闻</a></li>
+	<li><a href="__APP__/Content/lists/cat_id/105" class="fangan_ul_a_d">美国达泰瓷砖</a></li>
+	<li><a href="__APP__/Content/lists/cat_id/105" class="fangan_ul_a_d">意大利马拉齐</a></li>
+
+</ul>
+
+<div class="md30"></div>
+
+
+
+<div class="site_yrl">{$site_nav}</div>
+
+<div class="md30"></div>
+
+<div class="single_center" style="min-height:400px;">
+	<p class="mei_jian_title">{$show_title}</p>
+	<p class="time_sho">{$show_datetime|date="Y-m-d H:i",###}</p>
+	<div class="single_contetn">
+		<div class="md20">
+			
+		</div>
+		{$show_content}
+		
+		
+		<div class="clear"></div>
+	</div>
+	<div class="clear"></div>
+</div>
+
+
+
+
+
+<include file="./Admin/Tpl/Templates/default/footer.html" />

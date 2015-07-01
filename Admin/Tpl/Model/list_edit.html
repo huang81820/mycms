@@ -1,0 +1,112 @@
+<include file="Model:public_header" /> 
+<style>
+
+table tr td{border:1px solid #dddddd}
+</style>
+
+<script>
+$(document).ready(function(){
+	$('#list_add_column').click(function(){
+	
+		var str='';
+		str+='<div>名称（中文）:<input class="singleErea" type="text"  name="list_add_column_desc[]"   value="<?php echo $one_column['column_desc']?>" /> 列名:<font color="red">{$list_info.list_name}</font>_<input class="singleErea" type="text"  name="list_add_column_name[]"   value="" />列类型:<select name="list_column_type[]"><option value="singleErea">singleErea</option><option value="multiErea">multiErea</option><option value="singlePic">singlePic</option></select><font color="blue" class="list_column_delete" style="cursor:pointer">[ - ]</font></div>';
+	
+		$('#list_column_wrap').append(str);
+	});
+	
+	
+	$('#list_column_wrap').delegate('.list_column_delete','click',function(){
+		$(this).parent().remove();
+	});
+});
+</script>
+
+
+<div class="content-box-header CM_header">
+					
+	<h3><font color='red'>{$list_info.list_name}</font>菜单编辑</h3>
+	
+	<ul id="my_tab">
+		<!--
+		<li><a id="" href="{:U('Model/add_list_item')}" >菜单预览</a></li>
+		-->
+	</ul>
+	<div class="clear"></div>
+</div> 
+				
+<div class="content-box-content CM_boxList">
+	
+	<div class="tab-content default-tab" id="tab1">
+					
+		<hr/>
+				
+		<form action="{:U('Model/do_edit_list')}" method="post">				
+			<table class="add_type add_type">				
+				<thead>
+					<tr>
+						<td>分类菜单名称</td>
+						
+						<td>{$list_info.list_name}</td>				
+					</tr>
+					
+					<tr>
+						<td>描述</td>
+						
+						<td><input class="singleErea" type="text" name="item_desc" value="{$list_info.list_desc}"/></td>				
+					</tr>
+					
+					
+					
+					
+					<tr >
+						<td>扩展<span id="list_add_column" style="color:red; cursor:pointer">[ + ]</span></td>
+						
+						<td id="list_column_wrap">
+						
+							<?php $expand_column = unserialize( $list_info['expand_column'] );?>
+							
+							<?php foreach($expand_column as $key=>$one_column){?>
+							<div >
+								名称（中文）:<input class="singleErea" type="text"  name="list_add_column_desc[]"   value="<?php echo $one_column['column_desc']?>" /> 
+								列名:
+								<font color="red">
+									
+									<?php echo $list_info['list_name'];?>_<input class="singleErea" type="text"  name="list_add_column_name[]"   value="<?php echo $one_column['column_show_name']?>" /> 
+								</font>
+								列类型:
+								<select name="list_column_type[]">
+									<option <?php if($one_column['column_type']=='singleErea') echo 'selected="true"';?> value="singleErea">singleErea</option>
+									<option <?php if($one_column['column_type']=='multiErea') echo 'selected="true"';?> value="multiErea">multiErea</option>
+									<option <?php if($one_column['column_type']=='singlePic') echo 'selected="true"';?> value="singlePic">singlePic</option>
+								</select>
+								
+								<font color="blue" class="list_column_delete" style="cursor:pointer">[ - ]</font>
+							</div>
+							
+							<?php } ?>
+						</td>				
+					</tr>
+					
+					
+					
+					
+					
+					<td>操作</td>				
+						<input type="hidden" name="list_id" value="{$list_info.list_id}"/>
+						<td><input class="button" type="submit" value="提交" /> </td>				
+					</tr>
+					
+				</thead>
+				<tbody>
+					
+		
+				</tbody>
+			</table>
+		</form>	
+		
+	</div> 
+					
+</div> 		
+		
+<include file="Model:public_footer" /> 		
+	

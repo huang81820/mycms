@@ -1,0 +1,33 @@
+<include file="./Admin/Tpl/Templates/mobile/header.html" />	
+	<div class="position">
+		<div class='position_con'>
+			{$site_nav}
+		</div>
+	</div>
+	
+	<div class="width96 martop20"  >
+		<ul id="news_list">
+			<?php $art = cat2article(cat_id()); ?>
+			<?php foreach($art['lists'] as $key=>$artRow){ ?>
+			<li>
+				<a href="{$Think.const.CON_PATH}/{$artRow[article_id]}/cat_id/{$artRow[cat_id]}">
+					<img class="news_thumb" src="{$artRow['thumb']}" />
+				</a>
+				<div class="news_desc_wrap">
+					<p class="news_list_tit">{$artRow['title']}</p>
+					<p class="case_list_desc">
+						{$artRow['description']}
+					</p>
+					
+				</div>
+			</li>
+			
+			<?php } ?>	
+			
+		</ul>
+	</div>
+	
+	
+	
+	
+<include file="./Admin/Tpl/Templates/mobile/footer.html" />	

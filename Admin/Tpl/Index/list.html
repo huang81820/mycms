@@ -1,0 +1,16 @@
+
+<?php foreach($list_info as $val){ ?>
+<tr>
+<td><input type="checkbox" value=<?php echo $val['id']; ?> /></td>
+<td><?php echo $val["user_name"]; ?></td>
+<td><?php echo date("Y-m-d H:i:s",$val["last_login_time"]); ?></td>
+<td><?php echo $val["last_login_ip"]; ?></td>
+<td><?php echo $val['state']; ?></td>
+<td>
+	<a href="__APP__/Index/admin_del/id/<?php echo $val['id']; ?>" title="Edit" onclick="check_ajax(this)" ><img src="__PUBLIC__/images/icons/pencil.png" alt="Edit" /></a>&nbsp;&nbsp;
+	<a class="delete_link" href="__APP__/Index/admin_del/id/<?php echo $val['id']; ?>" title="Delete" ><img src="__PUBLIC__/images/icons/cross.png" alt="Delete" /></a>&nbsp;&nbsp;
+	<a href="#" title="Edit Meta"><img src="__PUBLIC__/images/icons/hammer_screwdriver.png" alt="Edit Meta" /></a>
+</td>
+</tr>
+
+<?php } ?>

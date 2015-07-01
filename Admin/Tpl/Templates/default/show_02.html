@@ -1,0 +1,64 @@
+<include file="./Admin/Tpl/Templates/default/header.html" />
+<div id="mainbody" style="margin-bottom:36px;">
+  <div class="blogs">
+    <div id="index_view">
+      <div id="show_pos">位置：{$site_nav}</div>
+      <h1 class="c_titile">{$show_title}</h1>
+      <p class="box">发布时间：{$show_datetime|date='Y-m-d H:i:s',###}<span></span>阅读（{$show_hits}）</p>
+      <div>
+		{$show_content}
+		{$next}
+	  </div>
+      
+      <div class="otherlink">
+        <h2>相关文章{$show_cat_id}</h2>
+		<?php $relatedArt = cat2article($show_cat_id,1,3); ?>
+		
+		
+        <ul>
+			<?php foreach($relatedArt['lists'] as $val){  ?>
+			<li><a href="{$Think.const.CON_PATH}/{$val['article_id']}" title="{$val['title']}">{$val['title']}</a></li>
+			<?php  } ?>
+	   </ul>
+      </div>
+    </div>
+    <!--bloglist end-->
+    <aside>
+      <div class="search">
+        <form class="searchform" method="get" action="#">
+          <input type="text" name="s" value="Search" onfocus="this.value=''" onblur="this.value='Search'">
+        </form>
+      </div>
+      <div class="sunnav">
+        <ul>
+          <li><a href="/web/" target="_blank" title="网站建设">网站建设</a></li>
+          <li><a href="/newshtml5/" target="_blank" title="HTML5 / CSS3">HTML5 / CSS3</a></li>
+          <li><a href="/jstt/" target="_blank" title="技术探讨">技术探讨</a></li>
+          <li><a href="/news/s/" target="_blank" title="慢生活">慢生活</a></li>
+        </ul>
+      </div>
+      <div class="tuijian">
+        <h2>栏目更新</h2>
+        <?php $art2 = cat2article($show_cat_id); ?>
+        <ol>
+		<?php foreach($art2['lists'] as $artKey=>$artRow){ ?>
+          <li><span><strong><?php echo $artKey+1; ?></strong></span><a href="{$Think.const.CON_PATH}/{$artRow[article_id]}">{$artRow[title]}</a></li>
+        <?php } ?>
+		</ol>
+      </div>
+     
+      <div class="clicks">
+			<h2>热门点击</h2>
+			<?php $hits_art = hits2art($show_cat_id,$num=10); ?>
+			<ol>
+			<?php foreach($hits_art as $hitsRow){ ?>
+				<li><span><a href="{$Think.const.CAT_PATH}/{$hitsRow['cat_id']}">{$hitsRow['cat_name']}</a></span><a href="{$Think.const.CON_PATH}/{$hitsRow['article_id']}">{$hitsRow['title']}</a></li>
+			<?php } ?> 
+			</ol>
+      </div>
+    </aside>
+  </div>
+  <!--blogs end--> 
+</div>
+<!--mainbody end-->
+<include file="./Admin/Tpl/Templates/default/footer.html" />

@@ -1,0 +1,74 @@
+<?php
+
+	$str='';
+
+	$str.='<input class="button2" id="'.$id.'" type="button" name="'.$name.'" value="上传图片" />';
+
+	
+	
+	
+	$namePrefix=$name;
+	
+	$attrsDiv='';
+	$attrsJs='';
+	$attrsDiv.='<div style="display:none;" class="DD_picsAtttr" >';
+	$attrsDiv.='<div class="DD_picsAtttr_top"><p class="DD_picTit" style="padding:0" >图片属性</p><a class="DD_picAttrClose"></a></div>';
+	$attrsDiv.='<div style="width:100%; clear:both;height:10px; margin:5px; ">';
+	foreach($picAttrs as $key=>$val){
+		$AttrName=$namePrefix.'_'.$val['key'].'[]';					
+		if($val['attr_type']==1){
+			if(($key+1)%2==0){ $attrsDiv.='&nbsp;&nbsp;&nbsp;&nbsp;'; }	
+			$attrsDiv.=$val['desc'].': <input type="text" name="'.$AttrName.'" />';
+			if(($key+1)%2==0){ $attrsDiv.='<br>'; }
+		}
+		if($val['attr_type']==3){
+			$attrsDiv.=$val['desc'].':<br> <textarea style="width:700px; height:300px;" name="'.$AttrName.'" ></textarea><br>';
+			$attrsJs.='new makeMUltiPicDialog("'.$name.'","'.$AttrName.'","'.$uploadPicPath.'",3,{"dialogName":"子属性"});';
+		}
+	}
+	$attrsDiv.='</div>';
+	//var_dump($result);exit;
+	$DDiv='';
+	$DDjs=''; //echo count($result);exit;<img style="position:absolute;right:0;top:0;z-index:99999" src="__PUBLIC__/images/tobig_btn.png" width="11" height="11"  />
+	foreach($result as $singlePic){
+		$DDiv.='<li><a href="#" is_select="no" ><img src="'.$singlePic['url'].'" height="102px" width="102px" />';
+		$DDiv.='</a>';
+		$DDiv.='<div class="toBig DD_picToBigBtn" style="background:url(__PUBLIC__/images/tobig_btn.png) no-repeat;"   src="'.$singlePic['url'].'" ></div>';
+		$DDiv.='<input type="hidden" name="'.$name.'[]" value="'.$singlePic['url'].'" />';
+		$attrsDiv2='';
+		$attrsDiv2.='<div style="display:none;" class="DD_picsAtttr" >';
+		$attrsDiv2.='<div class="DD_picsAtttr_top"><p class="DD_picTit" style="padding:0" >图片属性</p><a class="DD_picAttrClose"></a></div>';
+		$attrsDiv2.='<div style="width:100%; clear:both;height:18px; margin:5px; ">';
+		foreach($picAttrs as $key2=>$attrSingle){
+			$AttrName=$namePrefix.'_'.$attrSingle['key'].'[]';					
+			if($attrSingle['attr_type']==1){
+				if(($key2+1)%2==0){ $attrsDiv2.='&nbsp;&nbsp;&nbsp;&nbsp;'; }	
+				$attrsDiv2.=$attrSingle['desc'].': <input type="text" name="'.$AttrName.'" value="'.$singlePic[$attrSingle['key']].'"  />';
+				if(($key2+1)%2==0){ $attrsDiv2.='<br>'; }
+			}
+			if($attrSingle['attr_type']==3){
+				$attrsDiv2.=$attrSingle['desc'].':<br> <textarea style="width:700px; height:250px;" name="'.$AttrName.'" >'.$singlePic[$attrSingle['key']].'</textarea><br>';
+				$DDjs.='<script>new makeMUltiPicDialog("","'.$AttrName.'","'.$uploadPicPath.'",3,{"dialogName":"子属性"});</script>';
+			}
+		}
+		$attrsDiv2.='</div>';
+		$DDiv.=$attrsDiv2;
+		$DDiv.='</li>';
+	}
+	
+	$str.=$DDjs;
+	
+?>
+{$str}
+<script>
+
+new makeMUltiPicDialog("{$id}","{$name}[]","{$uploadPicPath}",1,{"dialogName":"图片管理","attrsDiv":'<?php echo $attrsDiv; ?>','attrJs':'<?php echo $attrsJs; ?>',"DDiv":'<?php echo $DDiv; ?>',"listpic":'<?php echo $DDiv ?>'});
+</script>
+
+
+
+
+
+
+
+

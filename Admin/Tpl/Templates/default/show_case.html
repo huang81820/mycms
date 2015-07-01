@@ -1,0 +1,101 @@
+<include file="./Admin/Tpl/Templates/default/header.html" />
+	
+	<div id="main_contact">
+		<div id="main_contact_con">
+			<img src="__PUBLIC__/statics/default/images/anli_bg1.jpg" />
+			<div id="contact_con_left">
+				<div id="side_nav_wrap">
+					<div id="side_nav_con">
+						<img id="about_tit" src="__PUBLIC__/statics/default/images/case_tit.png" />
+						<?php $subcat = sub_cat(top_parent(cat_id())) ?>
+						<ul id="side_nav2" cat_id="<?php echo cat_id(); ?>" >
+						<?php foreach($subcat as $subcatRow){ ?>
+							<li cat_id="{$subcatRow[category_id]}" ><a href="{$Think.const.CAT_PATH}/{$subcatRow[category_id]}">{$subcatRow['cat_name']}</a></li>
+						<?php } ?>		
+						</ul>
+						<div class="clear"></div>
+					</div>
+					<div id="side_nav_bo_bg"></div>
+				</div>
+			</div>
+			<script>
+			$(document).ready(function(){
+				$('#show_case_play li').css({'display':'none'});
+				$('#show_case_play li').eq(0).css({'display':'block'});
+				$('#show_case_sub_play li').eq(0).css({'border':'3px solid #fef676'});
+				var timer = null;
+				var now = 0;
+				var length = $('#show_case_play li').length;
+				
+				timer = setInterval(function(){
+					var next = (now+1)%length;
+					now = next;
+					move22(next);
+				},5000);
+				
+				function move22(next){
+					$('#show_case_play li').fadeOut();
+					$('#show_case_play li').eq(next).fadeIn();
+					$('#show_case_sub_play li').css({'border':'1px solid #595336'});
+					$('#show_case_sub_play li').eq(next).css({'border':'3px solid #fef676'});
+				}
+				
+				$('#case_pre').click(function(){
+					var index = (now-1)%length;
+					now = index;
+					move22(index);return false;
+				});
+				
+				$('#case_nex').click(function(){
+					var index = (now+1)%length;
+					now = index;
+					move22(index);return false;
+				});
+				
+				$('#show_case_sub_play li').click(function(){
+					var index = $(this).index();
+					now = index;
+					move22(index);
+				});
+				
+			});
+			</script>
+			<div id="contact_con_right">
+				<div id="contact_con_right_mid" style="margin-top:-3px;">
+					
+					<div id="contact_con_con">
+					
+						<p id="show_case_tit">{$show_title}</p>	
+						<p id="show_case_tit_eng">{$show_eng_title}</p>	
+						
+						<?php $cata = unserialize($show_catalog); ?>
+						
+						<div id="show_case_play_wrap">
+							<ul id="show_case_play">
+								<?php foreach($cata as $row){ ?>
+								<li><img src="{$row['url']}" width='948' height='630' /></li>
+								<?php } ?>
+							</ul>
+							<div id="show_case_sub_play_wrap">
+								<div id="show_case_sub_play_wrap2">
+									<ul id="show_case_sub_play">
+									<?php foreach($cata as $row2){ ?>
+										<li><img src="{$row2['url']}" width='200' height='120' /></li>
+									<?php } ?>
+									</ul>
+								</div>
+								<a id="case_pre" href="#"></a>
+								<a id="case_nex" href="#"></a>
+							</div>
+						</div>
+						
+						<div id="case_con">
+							    {$show_content}
+						</div>
+					</div>
+				</div>
+				<div id="contact_con_right_bo"></div>
+			</div>
+		</div>
+		
+<include file="./Admin/Tpl/Templates/default/footer.html" />

@@ -1,0 +1,7 @@
+
+
+<?php foreach($options as $val){
+	$check=in_array($val['value'],$valueArr)?'	checked':'';
+ ?>
+	<input {$check} class="{$id}" name="{$name}[]" type="checkbox" value="{$val['value']}"  />&nbsp;{$val['desc']}&nbsp;
+<?php } ?>

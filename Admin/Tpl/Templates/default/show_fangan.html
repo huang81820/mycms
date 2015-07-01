@@ -1,0 +1,336 @@
+<include file="./Admin/Tpl/Templates/default/header.html" />
+
+<div class="md20"></div>
+
+<ul class="fangan_ul">
+
+    <?php $subcat = sub_cat(top_parent(cat_id())) ?>
+
+    <?php foreach($subcat as $subcatRow){ ?>
+    <li><a href="{$Think.const.CAT_PATH}/{$subcatRow[category_id]}" class="fangan_ul_a_d <?php if(cat_id()==$subcatRow['category_id']) {echo 'fangan_li_nor'; } ?>">{$subcatRow['cat_name']}</a></li>
+    <?php } ?>
+
+</ul>
+
+<div class="md30"></div>
+
+<div class="show_an_cneter">
+	<img class="show_an_img" src="{$show_thumb}"/>
+	<div class="show_an_right">
+		<div class="md30"></div>
+		
+		<div class="">
+			<div class="li_left_info">
+				<div class="md10"></div>
+				<p class="meimu_1">美木系列</p>
+				<div class="md10"></div>
+				<p class="meimu_2">XIAO MEI</p>
+			</div>
+			
+			<div class="li_rigth_info">
+				<div class="md10"></div>
+				<p class="meimu2_1">艺术化的手法和高</p>
+				<div class="md10"></div>
+				<p class="meimu2_2">品位享受，将木纹</p>
+			</div>
+			
+			<div class="md20"></div>
+		</div>
+        <?php $relaArr = explode(',',$show_re_pro_ids);?>
+        <?php
+            $pro_arr = array();
+            foreach($relaArr as $val){
+                $pro = M('product')->find($val);
+                $pro_arr[]=$pro;
+
+        }
+
+        ?>
+
+		<div class="chan_wrap">
+				<div class="relat_chan1">
+                    <?php if(!empty($pro_arr[0])){ ?>
+                        <a href="{$Think.const.CON_PATH}/{$pro_arr[0][product_id]}/cat_id/{$pro_arr[0][cat_id]}">
+                            <img src='<?php echo $pro_arr[0]['thumb'];?>' class="anli_guanchan"/>
+                            <div class="md5"></div>
+                            <p class="cha_p_rela"><?php echo $pro_arr[0]['title'];?></p>
+                        </a>
+                    <?php }?>
+				</div>
+
+				<div class="relat_chan2">
+                    <?php if(!empty($pro_arr[1])){ ?>
+                    <a href="{$Think.const.CON_PATH}/{$pro_arr[1][product_id]}/cat_id/{$pro_arr[1][cat_id]}">
+                        <img src='<?php echo $pro_arr[1]['thumb'];?>' class="anli_guanchan2"/>
+                        <div class="md5"></div>
+                        <p class="cha_p_rela"><?php echo $pro_arr[0]['title'];?></p>
+                    </a>
+                    <?php } ?>
+				</div>
+		</div>
+	</div>
+	
+	<div class="md20"></div>
+	
+	
+	<div class="anli_contetn"  style="min-height: 400px;">
+	{$show_content}
+	</div>
+	
+	<!--
+	<div class='md30'></div>
+	
+	<div class="anli_shang_yanse">
+		<p class="shang_title">商品颜色</p>
+		
+		<div class="md20"></div>
+		
+		<ul class="chan_yan_ul">
+			<li class="chan_yan_li">
+				<img src='' class="chan_yan_img"/>
+				<div class="md5"></div>
+				
+				
+				<p class="anli_chan_ya_p">DR6002001      <span class="size_an_ya">594.4x594.4mm</span></p>
+			</li>
+			
+			<li class="chan_yan_li">
+				<img src='' class="chan_yan_img"/>
+				<div class="md5"></div>
+				
+				
+				<p class="anli_chan_ya_p">DR6002001      <span class="size_an_ya">594.4x594.4mm</span></p>
+			</li>
+			
+			<li class="chan_yan_li">
+				<img src='' class="chan_yan_img"/>
+				<div class="md5"></div>
+				
+				
+				<p class="anli_chan_ya_p">DR6002001      <span class="size_an_ya">594.4x594.4mm</span></p>
+			</li>
+			
+			<li class="chan_yan_li">
+				<img src='' class="chan_yan_img"/>
+				<div class="md5"></div>
+				
+				
+				<p class="anli_chan_ya_p">DR6002001      <span class="size_an_ya">594.4x594.4mm</span></p>
+			</li>
+			
+			<li class="chan_yan_li">
+				<img src='' class="chan_yan_img"/>
+				<div class="md5"></div>
+				
+				
+				<p class="anli_chan_ya_p">DR6002001      <span class="size_an_ya">594.4x594.4mm</span></p>
+			</li>
+			
+			<li class="chan_yan_li">
+				<img src='' class="chan_yan_img"/>
+				<div class="md5"></div>
+				
+				
+				<p class="anli_chan_ya_p">DR6002001      <span class="size_an_ya">594.4x594.4mm</span></p>
+			</li>
+		</ul>
+	</div>
+	
+	
+	<div class='md20'></div>
+	
+	<div class="anli_shang_yanse">
+		<p class="shang_title">商品可加工</p>
+		
+		<div class="md20"></div>
+		
+		<ul class="chan_yan_ul">
+			<li class="chan_yan_li">
+				<img src='' class="chan_yan_img"/>
+				<div class="md5"></div>
+				
+				
+				
+			</li>
+			
+			<li class="chan_yan_li">
+				<img src='' class="chan_yan_img"/>
+				<div class="md5"></div>
+				
+				
+				
+			</li>
+			
+			<li class="chan_yan_li">
+				<img src='' class="chan_yan_img"/>
+				<div class="md5"></div>
+				
+				
+				
+			</li>
+			
+			<li class="chan_yan_li">
+				<img src='' class="chan_yan_img"/>
+				<div class="md5"></div>
+				
+				
+				
+			</li>
+			
+			<li class="chan_yan_li">
+				<img src='' class="chan_yan_img"/>
+				<div class="md5"></div>
+				
+				
+				
+			</li>
+			
+			<li class="chan_yan_li">
+				<img src='' class="chan_yan_img"/>
+				<div class="md5"></div>
+				
+				
+				
+			</li>
+		</ul>
+	</div>
+	
+	
+	<div class='md20'></div>
+	
+	<div class="anli_shang_yanse">
+		<p class="shang_title">地面铺贴建议</p>
+		
+		<div class="md20"></div>
+		
+		<ul class="chan_yan_ul">
+			<li class="chan_yan_li">
+				<img src='' class="chan_yan_img"/>
+				<div class="md5"></div>
+				
+				
+				
+			</li>
+			
+			<li class="chan_yan_li">
+				<img src='' class="chan_yan_img"/>
+				<div class="md5"></div>
+				
+				
+				
+			</li>
+			
+			<li class="chan_yan_li">
+				<img src='' class="chan_yan_img"/>
+				<div class="md5"></div>
+				
+				
+				
+			</li>
+			
+			<li class="chan_yan_li">
+				<img src='' class="chan_yan_img"/>
+				<div class="md5"></div>
+				
+				
+				
+			</li>
+			
+			<li class="chan_yan_li">
+				<img src='' class="chan_yan_img"/>
+				<div class="md5"></div>
+				
+				
+				
+			</li>
+			
+			<li class="chan_yan_li">
+				<img src='' class="chan_yan_img"/>
+				<div class="md5"></div>
+				
+				
+				
+			</li>
+		</ul>
+	</div>
+	
+	
+	
+	<div class='md20'></div>
+	
+	<div class="anli_shang_yanse">
+		<p class="shang_title">墙面铺贴建议</p>
+		
+		<div class="md20"></div>
+		
+		<ul class="chan_yan_ul">
+			<li class="chan_yan_li2">
+				<img src='' class="chan_yan_img_qiang"/>
+				<div class="md5"></div>
+				
+				
+				
+			</li>
+			
+			<li class="chan_yan_li2">
+				<img src='' class="chan_yan_img_qiang"/>
+				<div class="md5"></div>
+				
+				
+				
+			</li>
+			
+			<li class="chan_yan_li2">
+				<img src='' class="chan_yan_img_qiang"/>
+				<div class="md5"></div>
+				
+				
+				
+			</li>
+			
+			<li class="chan_yan_li2">
+				<img src='' class="chan_yan_img_qiang"/>
+				<div class="md5"></div>
+				
+				
+				
+			</li>
+			
+			<li class="chan_yan_li2">
+				<img src='' class="chan_yan_img_qiang"/>
+				<div class="md5"></div>
+				
+				
+				
+			</li>
+			
+			<li class="chan_yan_li">
+				<img src='' class="chan_yan_img_qiang"/>
+				<div class="md5"></div>
+				
+				
+				
+			</li>
+		</ul>
+	</div>
+	
+	
+	
+	
+	<img class="an_li_show_botom" src=''/>
+	
+	-->
+	
+	
+	
+	
+	
+	
+	<div class="md20"></div>
+</div>
+
+
+
+
+
+<include file="./Admin/Tpl/Templates/default/footer.html" />

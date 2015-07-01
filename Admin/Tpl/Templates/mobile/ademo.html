@@ -1,0 +1,76 @@
+<include file="./Admin/Tpl/Templates/mobile/header.html" />
+
+	
+	<div id="play_wrap">
+		<ul id="play">
+			<?php $art = cat2article(68,1,100,'article_sort ASC'); ?>
+			<?php foreach($art['lists'] as $artRow){ ?>
+			<li><img src="{$artRow['thumb']}" /></li>
+			<?php } ?>	
+		</ul>
+		<nav class="ban-position">
+			
+		</nav>
+	</div>
+	
+	<div class="nor_title">
+		<a href="#" class="nor_tit">
+			<img class="nor_tit_pic" src="__PUBLIC__/statics/mobile/images/about_tit.png" />
+			<p class="nor_tit_more"></p>
+		</a>
+		<div class="nor_con">
+			<?php $art = cat2article(67,$is_all=1,$num=1) ?>
+			{$art['lists'][0]['content']}
+		</div>
+	</div>
+	
+	<div class="nor_title">
+		<a href="#" class="nor_tit">
+			<img class="nor_tit_pic" src="__PUBLIC__/statics/mobile/images/case_tit.png" />
+			<p class="nor_tit_more"></p>
+		</a>
+		<div id="case_wrap">
+			<div id="case_con">
+				<ul id="case_list">
+					<li><img src="__PUBLIC__/statics/mobile/images/case_01.jpg" /></li>
+					<li><img src="__PUBLIC__/statics/mobile/images/case_01.jpg" /></li>
+					<li><img src="__PUBLIC__/statics/mobile/images/case_01.jpg" /></li>
+					<li><img src="__PUBLIC__/statics/mobile/images/case_01.jpg" /></li>
+					<div class="clear"></div>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	
+	<div class="nor_title">
+		<a href="#" class="nor_tit">
+			<img class="nor_tit_pic" src="__PUBLIC__/statics/mobile/images/group_tit.png" />
+			<p class="nor_tit_more"></p>
+		</a>
+		<div class="full_con">
+			<img id="xiaofu_logo" src="__PUBLIC__/statics/mobile/images/xiaofu_logo.png" />
+			<ul id="group_list">
+				<li><a href="#"><img src="__PUBLIC__/statics/mobile/images/gaokang_logo.png" style="margin-top:32px;" /></a></li>
+				<li><a href="#"><img src="__PUBLIC__/statics/mobile/images/jianzhuang_logo.png" /></a></li>
+				<li><a href="#"><img src="__PUBLIC__/statics/mobile/images/jieneng_logo.png" /></a></li>
+				<li><a href="#"><img src="__PUBLIC__/statics/mobile/images/zhaoming_logo.png" /></a></li>
+				<li><a href="#"><img src="__PUBLIC__/statics/mobile/images/yiyao_logo.png" style="margin-top:20px;" /></a></li>
+				<div class="clear"></div>
+			</ul>
+		</div>
+	</div>
+	
+	<div class="nor_title">
+		<a href="#" class="nor_tit">
+			<img class="nor_tit_pic" src="__PUBLIC__/statics/mobile/images/news_tit.png" />
+			<p class="nor_tit_more"></p>
+		</a>
+		<div class="full_con2">
+			<a href="#"><img src="__PUBLIC__/statics/mobile/images/news_show.jpg" /></a>
+		</div>
+	</div>
+<include file="./Admin/Tpl/Templates/mobile/footer.html" />
+
+	
+	

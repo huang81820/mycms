@@ -1,0 +1,188 @@
+<include file="Model:public_header" /> 
+
+
+<style>
+
+
+
+
+
+
+.active {border:3px dashed red; background:#eeeeee}
+.mytable{ width:100%; display:table;  position:relative}
+.mytable > div {width:100%;  display:table-row;height:30px; line-height:30px;  text-align:center}
+.list_cell{ display:table-cell;  border:#CCC 1px solid;font-size:14px;}
+
+.mytable > div{width:100%; height:30px;} 
+
+</style>
+<script>
+$(document).ready(function(){
+	new dragSort('ul1','cm_table_column','{:U("Model/changeListSort")}');
+		
+    new Fast_radio_set('ul1','cm_table_column','{:U('Model/ajax_set_is')}','__PUBLIC__/images/status0.png','__PUBLIC__/images/status1.png');
+	
+	//new dragSort('ul2','drag_span','{:U("Model/changeListSort")}');
+	
+	(function(){
+		$('.ajax_set_options').change(function(){
+			var value = $(this).val();
+			var column_name = $(this).attr('name');
+			var tab_col_id = $(this).attr('tab_col_id');
+			$.get('{:U("Model/ajax_set_excel_in_match")}',{'value':value,'tab_col_id':tab_col_id,'column_name':column_name},function(data){
+				if(data=='1'){
+					Message('操作成功');
+				}else{
+					Message('操作失败');
+				}
+			});
+		});
+	})();
+});
+
+
+
+</script>
+<div class="content-box-header CM_header">
+					
+	<h3>
+		<a href="{:U('Model/table_list')}">
+			<font color="red"><<模型列表 &nbsp; &nbsp; &nbsp;</font>
+		</a>		
+		<font color="red">{$table.table_name}--</font>的字段列表
+	</h3>
+	
+	<ul id="my_tab">
+		
+	</ul>
+	
+	<div class="clear"></div>
+</div> 
+				
+				
+<div class="content-box-content CM_boxList">
+	
+	<div class="tab-content default-tab" id="tab1">
+		
+		<div style="clear:both">
+				
+				<div id="ul1" class="dragSort">
+					<div class="table_thead">
+						
+						<span class="drag_span"> ID</span>
+						<span class="drag_span"> 字段名称</span>
+						<span class="drag_span"> 字段描述</span>
+						<span class="drag_span"> 字段类型</span>
+						
+						<span class="drag_span">  导入</span>
+						<span class="drag_span">允许为空</span>
+						<span class="drag_span">是否导入查重</span>
+						
+						<span class="drag_span">查重方式</span>
+						<span class="drag_span">查重逻辑</span>
+						<span class="drag_span">导入映射</span>
+						
+						<span class="drag_span">  导出</span>
+						<span class="drag_span">导出映射</span>
+					</div>
+				<foreach name="tab_col_list" item="vo" key="key">
+					<div class="table_row">
+						
+						<span  class="drag_span"> {$vo.tab_col_id}</span>
+						<span  class="drag_span"> {$vo.column_name}</span>
+						<span  class="drag_span"> {$vo.column_desc}</span>
+						<span  class="drag_span"> {$vo.column_type}</span>
+						
+						
+						
+						<span  class="drag_span">
+							<if condition="($vo.column_type eq 'primaryKey') OR ($vo.column_type eq 'multiErea') OR ($vo.column_type eq 'multiPic') OR ($vo.column_type eq 'edictor') OR ($vo.column_type eq 'checkedbox') OR ($vo.column_type eq 'file') OR ($vo.column_type eq 'date_range') OR ($vo.column_type eq 'date_time_range')"> 
+								<img src="__PUBLIC__/images/icons/exclamation.png" />
+							<else />
+								<img class="ajax_set" columnname="is_excel_in" rowid="{$vo.tab_col_id}" val="{$vo.is_excel_in}" src="__PUBLIC__/images/status{$vo.is_excel_in}.png" />
+							</if>
+						</span>
+						
+						<span  class="drag_span">
+							<if condition="($vo.column_type eq 'date_range') OR ($vo.column_type eq 'date_time_range') OR ($vo.column_type eq 'primaryKey') OR ($vo.column_type eq 'multiPic') OR ($vo.column_type eq 'edictor') OR ($vo.column_type eq 'checkedbox') OR ($vo.column_type eq 'file') OR ($vo.column_type eq 'multiErea') OR ($vo.column_type eq 'singlePic')"> 
+								<img src="__PUBLIC__/images/icons/exclamation.png" />
+							<else />
+							<img class="ajax_set" columnname="is_excel_empty_in" rowid="{$vo.tab_col_id}" val="{$vo.is_excel_empty_in}" src="__PUBLIC__/images/status{$vo.is_excel_empty_in}.png" />
+							</if>
+						</span>
+						
+						<span  class="drag_span">
+							<if condition="($vo.column_type eq 'date_range') OR ($vo.column_type eq 'date_time_range') OR ($vo.column_type eq 'primaryKey') OR ($vo.column_type eq 'multiPic') OR ($vo.column_type eq 'edictor') OR ($vo.column_type eq 'checkedbox') OR ($vo.column_type eq 'file') OR ($vo.column_type eq 'multiErea') OR ($vo.column_type eq 'singlePic')"> 
+								<img src="__PUBLIC__/images/icons/exclamation.png" />
+							<else />
+							<img class="ajax_set" columnname="is_excel_match" rowid="{$vo.tab_col_id}" val="{$vo.is_excel_match}" src="__PUBLIC__/images/status{$vo.is_excel_match}.png" />
+							</if>
+						</span>
+						
+						
+						
+						<span  class="drag_span">
+							<if condition="($vo.column_type eq 'primaryKey') OR ($vo.column_type eq 'multiErea') OR ($vo.column_type eq 'multiPic') OR ($vo.column_type eq 'edictor') OR ($vo.column_type eq 'checkedbox') OR ($vo.column_type eq 'file') OR ($vo.column_type eq 'date_range') OR ($vo.column_type eq 'date_time_range')"> 
+								<img src="__PUBLIC__/images/icons/exclamation.png" />
+							<else />
+								<select class="ajax_set_options" name="excel_match_method" tab_col_id="{$vo.tab_col_id}" >
+									<if condition="$vo.excel_match_method eq 'eq'" ></if>
+									<option value="">匹配方式</option>
+									<option value="eq" <if condition="$vo.excel_match_method eq 'eq'" >selected="true"</if> >-eq-</option>
+									<option value="like" <if condition="$vo.excel_match_method eq 'like'" >selected="true"</if> >-like-</option>
+								</select>
+							</if>
+							
+						</span>
+						
+						<span  class="drag_span">
+							<if condition="($vo.column_type eq 'primaryKey') OR ($vo.column_type eq 'multiErea') OR ($vo.column_type eq 'multiPic') OR ($vo.column_type eq 'edictor') OR ($vo.column_type eq 'checkedbox') OR ($vo.column_type eq 'file') OR ($vo.column_type eq 'date_range') OR ($vo.column_type eq 'date_time_range')"> 
+								<img src="__PUBLIC__/images/icons/exclamation.png" />
+							<else />
+								<select class="ajax_set_options" name="excel_match_logic" tab_col_id="{$vo.tab_col_id}" >
+									<option value="">匹配逻辑</option>
+									<option value="AND" <if condition="$vo.excel_match_logic eq 'AND'" >selected="true"</if> >-AND-</option>
+									<option value="OR" <if condition="$vo.excel_match_logic eq 'OR'" >selected="true"</if> >-OR-</option>
+								</select>
+							</if>
+						</span>
+						
+						<span  class="drag_span">
+							<if condition="($vo.column_type eq 'primaryKey') OR ($vo.column_type eq 'multiErea') OR ($vo.column_type eq 'multiPic') OR ($vo.column_type eq 'edictor') OR ($vo.column_type eq 'checkedbox') OR ($vo.column_type eq 'file') OR ($vo.column_type eq 'date_range') OR ($vo.column_type eq 'date_time_range')"> 
+								<img src="__PUBLIC__/images/icons/exclamation.png" />
+							<else />
+								<a href="{:U('Model/table_excel_in_map',array('tab_col_id'=>$vo['tab_col_id']))}">导入映射</a>
+							</if>
+						</span>
+						
+						
+						<span  class="drag_span">
+							<if condition="($vo.column_type eq 'date_range') OR ($vo.column_type eq 'date_time_range') OR ($vo.column_type eq 'primaryKey') OR ($vo.column_type eq 'multiPic') OR ($vo.column_type eq 'edictor') OR ($vo.column_type eq 'checkedbox') OR ($vo.column_type eq 'file') OR ($vo.column_type eq 'multiErea') OR ($vo.column_type eq 'singlePic')"> 
+								<img src="__PUBLIC__/images/icons/exclamation.png" />
+							<else />
+							<img class="ajax_set" columnname="is_excel_out" rowid="{$vo.tab_col_id}" val="{$vo.is_excel_out}" src="__PUBLIC__/images/status{$vo.is_excel_out}.png" />
+							</if>
+						</span>
+						
+						<span  class="drag_span">
+							<if condition="($vo.column_type eq 'primaryKey') OR ($vo.column_type eq 'multiErea') OR ($vo.column_type eq 'multiPic') OR ($vo.column_type eq 'edictor') OR ($vo.column_type eq 'checkedbox') OR ($vo.column_type eq 'file') OR ($vo.column_type eq 'date_range') OR ($vo.column_type eq 'date_time_range')"> 
+								<img src="__PUBLIC__/images/icons/exclamation.png" />
+							<else />
+								<a href="{:U('Model/table_excel_out_map',array('tab_col_id'=>$vo['tab_col_id']))}">导出映射</a>
+							</if>
+						</span>
+					</div>
+				</foreach>
+				</div>
+				
+
+	
+				<div style="clear:both"></div>
+			</div>
+		</div> 
+					
+</div> 
+		
+		
+<include file="Model:public_footer" /> 		
+	

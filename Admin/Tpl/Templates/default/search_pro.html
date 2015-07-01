@@ -1,0 +1,97 @@
+<include file="./Admin/Tpl/Templates/default/header.html" />
+
+<script>
+$(document).ready(function(){
+	new Slider('#focus3');
+});
+</script>
+
+<div class="md20">
+
+</div>
+
+
+
+<div class="md30"></div>
+<?php $caty = cat_id();?>
+
+<if condition="$caty eq 102">
+	<p class="list_pro_title">小资系列</p>
+	<p class="list_pro_title2">XIAO ZI</p>
+	<div class="md10"></div>
+	<p class="list_pro_title3">小资系列向往西方思想生活，追求内心体验、物质、精神享受和生活品味。</p>
+</if>
+
+<if condition="$caty eq 103">
+	<p class="list_pro_title">小白系列</p>
+	<p class="list_pro_title2">XIAO BAI</p>
+	<div class="md10"></div>
+	<p class="list_pro_title3">小白系列追求时尚与潮流，简洁、无过多的装饰、运用浅色类材料极致发挥空间无限想象。</p>
+</if>
+
+<if condition="$caty eq 100">
+	<p class="list_pro_title">小美系列</p>
+	<p class="list_pro_title2">XIAO MEI</p>
+	<div class="md10"></div>
+	<p class="list_pro_title3">小美系列是自在、随意生活方式，没有太多造作的修饰与约束，从中能寻找出美式文化根基，大气而又不失自由。</p>
+</if>
+
+<if condition="$caty eq 101">
+	<p class="list_pro_title">美木系列</p>
+	<p class="list_pro_title2">MEI MU</p>
+	<div class="md10"></div>
+	<p class="list_pro_title3">美木系列崇尚大自然与人文生活结合，</p>
+</if>
+
+<if condition="$caty eq 104">
+	<p class="list_pro_title">专家级产品</p>
+	<p class="list_pro_title2">EXPERT LEVEL</p>
+	<div class="md10"></div>
+	<p class="list_pro_title3">专家级产品融合当代建筑审美及使用需求，用于多个世界著名建筑中。</p>
+</if>
+
+
+<div class="md20"></div>
+
+<?php 
+	$pr_cat_id = cat_id();
+	$advertise_id = 0;
+	if( $pr_cat_id==102 )  $advertise_id=4;
+	if( $pr_cat_id==103 )  $advertise_id=5;
+	if( $pr_cat_id==100 )  $advertise_id=6;
+	if( $pr_cat_id==101 )  $advertise_id=7;
+	if( $pr_cat_id==104 )  $advertise_id=8;
+	
+	//echo $advertise_id.'asdf';
+?>
+<?php $ad = getByModules(25,'advertise_id='.$advertise_id); ?>				
+<?php $picArr = unserialize($ad[0]['pics']); ?>
+<p style="text-align:right; font-size:12px; margin-bottom:8px; margin-right:40px;">搜索结果：About <span style="color:red"><?php  echo count($result); ?></span> results （Use 0.24 Second）<p>
+
+<div class="md50"></div>
+<div class="md20"></div>
+
+
+
+	
+
+
+<div class="width1000_pro">
+	<ul class="pro_ul">
+		<foreach name="result" item="vo">
+			<li class="pro_li">
+				<a href="{$Think.const.CON_PATH}/{$vo[product_id]}/cat_id/{$vo[cat_id]}">
+					<img class="pro_list_img" src='{$vo.thumb}' />
+					<div class="md10"></div>
+					<p class="pro_p1">{$vo.title}</p>
+
+				</a>
+			</li>
+		</foreach>
+
+	</ul>
+</div>
+
+
+
+<include file="./Admin/Tpl/Templates/default/footer.html" />

@@ -1,0 +1,115 @@
+<include file="./Admin/Tpl/Templates/default/header.html" />
+
+<script>
+$(document).ready(function(){
+	new Slider('#focus3');
+});
+</script>
+
+<div class="md20">
+
+</div>
+
+<ul class="fangan_ul">
+	<?php $subcat = sub_cat(top_parent(cat_id())) ?>
+	
+	<?php foreach($subcat as $subcatRow){ ?>
+	<li><a href="{$Think.const.CAT_PATH}/{$subcatRow[category_id]}" class="fangan_ul_a_d <?php if(cat_id()==$subcatRow['category_id']) {echo 'fangan_li_nor'; } ?>">{$subcatRow['cat_name']}</a></li>
+	<?php } ?>	
+	
+	
+	
+</ul>
+
+<div class="md30"></div>
+<?php $caty = cat_id();?>
+
+<if condition="$caty eq 102">
+	<p class="list_pro_title">小资系列</p>
+	<p class="list_pro_title2">XIAO ZI</p>
+	<div class="md10"></div>
+	<p class="list_pro_title3">小资系列向往西方思想生活，追求内心体验、物质、精神享受和生活品味。</p>
+</if>
+
+<if condition="$caty eq 103">
+	<p class="list_pro_title">小白系列</p>
+	<p class="list_pro_title2">XIAO BAI</p>
+	<div class="md10"></div>
+	<p class="list_pro_title3">小白系列追求时尚与潮流，简洁、无过多的装饰、运用浅色类材料极致发挥空间无限想象。</p>
+</if>
+
+<if condition="$caty eq 100">
+	<p class="list_pro_title">小美系列</p>
+	<p class="list_pro_title2">XIAO MEI</p>
+	<div class="md10"></div>
+	<p class="list_pro_title3">小美系列是自在、随意生活方式，没有太多造作的修饰与约束，从中能寻找出美式文化根基，大气而又不失自由。</p>
+</if>
+
+<if condition="$caty eq 101">
+	<p class="list_pro_title">美木系列</p>
+	<p class="list_pro_title2">MEI MU</p>
+	<div class="md10"></div>
+	<p class="list_pro_title3">美木系列崇尚大自然与人文生活结合，</p>
+</if>
+
+<if condition="$caty eq 104">
+	<p class="list_pro_title">专家级产品</p>
+	<p class="list_pro_title2">EXPERT LEVEL</p>
+	<div class="md10"></div>
+	<p class="list_pro_title3">专家级产品融合当代建筑审美及使用需求，用于多个世界著名建筑中。</p>
+</if>
+
+
+<div class="md20"></div>
+
+<?php 
+	$pr_cat_id = cat_id();
+	$advertise_id = 0;
+	if( $pr_cat_id==102 )  $advertise_id=4;
+	if( $pr_cat_id==103 )  $advertise_id=5;
+	if( $pr_cat_id==100 )  $advertise_id=6;
+	if( $pr_cat_id==101 )  $advertise_id=7;
+	if( $pr_cat_id==104 )  $advertise_id=8;
+	
+	//echo $advertise_id.'asdf';
+?>
+<?php $ad = getByModules(25,'advertise_id='.$advertise_id); ?>				
+<?php $picArr = unserialize($ad[0]['pics']); ?>
+<div id="focus3">
+	<ul>	
+		<?php foreach($picArr as $pic){?>
+		<li>
+			<a href="<?php echo $pic['href']?>" ><img src="<?php echo $pic['url']?>"  /></a>	
+		</li>
+		<?php } ?>
+		
+	</ul>
+</div>
+
+<div class="md50"></div>
+<div class="md20"></div>
+
+
+<?php $pros = cat2article($cat_id=cat_id(),$is_all=1,$num=50,$order='no')?>
+	
+
+
+<div class="width1000_pro">
+	<ul class="pro_ul">
+		<foreach name="pros.lists" item="vo">
+			<li class="pro_li">
+				<a href="{$Think.const.CON_PATH}/{$vo[product_id]}/cat_id/{$vo[cat_id]}">
+					<img class="pro_list_img" src='{$vo.thumb}' />
+					<div class="md10"></div>
+					<p class="pro_p1">{$vo.title}</p>
+
+				</a>
+			</li>
+		</foreach>
+
+	</ul>
+</div>
+
+
+
+<include file="./Admin/Tpl/Templates/default/footer.html" />

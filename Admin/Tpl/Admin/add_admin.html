@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Simpla Admin</title>
+
+<include file="Admin:Resources" />
+
+</head>
+<body>
+	<div id="body-wrapper"> 
+		<div id="main-content"> 
+			
+
+
+			<div class="content-box">
+				
+				<div class="content-box-header">
+					
+					<h3>添加文章</h3>
+					
+					<ul id="my_tab">
+						<li><a href="#" ></a></li>
+								
+					</ul>
+					<div class="clear"></div>
+				</div> 
+			
+			<form action="__APP__/Admin/add_admin_ok" method="POST" enctype="multipart/form-data"    >
+				<div class="content-box-content add_type" >
+					<table>
+						<tbody>
+							<tr>
+								<td>所属用户组：</td>
+								<td id="role_id">{$roleSelect}</td>
+								<td id="type" style="color:red">(必填)</td>
+								</tr>
+							<tr>
+								<td>管理员用户名:</td>
+								<td><input class="singleErea" type="text" name="user_name"  /></td>
+								<td id="user_name" style="color:red">(必填)</td>
+							</tr>
+								
+							<tr>
+								<td>密码:</td>
+								<td><input class="singleErea" type="password" name="password" /></td>
+								<td id="password" style="color:red">(必填)</td>
+							</tr>
+								
+							<tr>
+								<td>确认密码:</td>
+								<td><input class="singleErea" type="password" name="password2" /> </td>
+								<td id="password2" style="color:red">(必填)</td>
+							</tr>
+								
+							<tr>
+								<td>状态:</td>
+								<td><input id="checkbox" type="checkbox" checked name="state" /> </td>
+								<td id="password2" style="color:red">(必填)</td>
+							</tr>
+									
+							<tr>
+								<td>操作:</td>
+								<td><input class="button" style=" height:26px;" type="submit" value="确认添加" /></td>
+								<td></td>
+							</tr>
+								
+								
+						</tbody>	
+					</table>
+				</div>
+			</form>
+				
+			</div>
+			
+			<div class="clear"></div>
+			
+			
+			
+		</div> 
+
+	</div>
+	
+</body>
+</html>

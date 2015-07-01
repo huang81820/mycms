@@ -1,0 +1,241 @@
+
+<include file="Model:public_header" /> 
+<style>
+
+table tr td{border:1px solid #dddddd}
+</style>
+
+<script>
+	$(document).ready(function(){
+		(function(){
+			var input_type = "{$inputType}";
+			if(input_type!=''){			
+				$('select[name=column_type]').val(input_type);			
+			}		
+		})();
+		
+			//选中正则类型
+		
+		(function(){
+			var input_type = "{$inputInfo.validate_regexp}";
+			if(input_type!=''){			
+				$('select[name="validate_regexp"]').val(input_type);			
+			}		
+		})();
+	});
+</script>
+
+<div class="content-box-header CM_header ">
+					
+	<h3>
+		<a href="{:U('Model/table_column_list',array('table_id'=>$table['table_id']))}">
+			<font color="red">{$table.table_name} </font>
+		</a>--表的字段--		
+		<font color="red">{$inputInfo.column_type}</font>--修改				
+	</h3>
+	
+	<ul id="my_tab">
+		<li><a id="" href="{:U('Model/add_table_column',array('table_id'=>$table['table_id']))}" ></a></li>
+	</ul>
+	<div class="clear"></div>
+</div> 
+				
+				
+<div class="content-box-content CM_boxList">
+	
+	<div class="tab-content default-tab" id="tab1">
+	
+		<form action="{:U('Model/do_edit_column')}" method="post">
+		<table class="">			
+			<tbody>		
+				<tr>
+					<td>字段名称（英文abc）：</td>
+					
+					<td><input class="singletext" type="text" value="{$inputInfo.column_name}" name="column_name" readonly/></td>
+
+				</tr>
+				<tr>
+					<td>字段描述（中文）：</td>
+					
+					<td> <input class="singletext" type="text"  name="column_desc" value="{$inputInfo.column_desc}"/> </td>
+				</tr>
+				<tr>
+					<td>添加显示：</td>
+					
+					<td>
+						是<input type="radio" value="1"  name="is_add"  <if condition="$inputInfo.is_add eq 1">checked="true"</if>  />&nbsp;&nbsp;
+						
+						否<input type="radio" value="0"  name="is_add"  <if condition="$inputInfo.is_add eq 0">checked="true"</if>/>
+					
+					</td>
+				</tr>
+				
+				<tr>
+					<td>编辑显示：</td>
+					
+					<td>
+						是<input type="radio" value="1"  name="is_edit" <if condition="$inputInfo.is_edit eq 1">checked="true"</if>/>&nbsp;&nbsp;
+						
+						否<input type="radio" value="0"  name="is_edit" <if condition="$inputInfo.is_edit eq 0">checked="true"</if>/>					
+					</td>
+				</tr>
+				
+
+				
+				<tr>
+					<td>输入帮助：</td>
+					
+					<td> <input class="singletext" type="text"  name="column_help"  value="{$inputInfo.column_help}"/> </td>
+				</tr>
+				
+				<tr>
+					<td>错误提示信息：</td>
+					
+					<td> <input class="singletext" type="text"  name="column_error_message"  value="{$inputInfo.column_error_message}"/> </td>
+				</tr>
+				
+				<tr>
+					<td>字段默认值：</td>
+					
+					<td> <input class="singleMinText" type="text"  name="column_default_value" value="{$inputInfo.column_default_value}" /> </td>
+				</tr>
+				
+				<tr>
+					<td>字段排序：</td>
+					
+					<td> <input class="singleMinText" type="text"  name="column_sort" value="{$inputInfo.column_sort}" /> </td>
+				</tr>
+				
+				
+				<tr>
+					<td>字段类型：</td>
+					
+					<td>
+						<select class="selectArea" name="column_type"  onfocus="this.defOpt=this.selectedIndex" onchange="this.selectedIndex=this.defOpt;">
+							
+							<option value="singleErea">单行文本</option>
+							<option value="multiErea">多行文本</option>
+							<option value="edictor">编辑器</option>
+							<option value="hidden">隐藏域</option>
+							<option value="singlePic">单图片</option>
+							<option value="multiPic">多图片</option>
+							<option value="select">下拉列表</option>
+							<option value="radio">单选按钮</option>
+							<option value="date">日期</option>
+							<option value="hidden_date">自动完成日期</option>
+							<option value="date_time">日期时间</option>
+							<option value="date_range">日期范围</option>
+							<option value="checkedbox">多选按钮</option>
+							<option value="file">文件上传</option>
+							<option value="lianDong">联动菜单</option>
+							
+						</select>
+					</td>
+				</tr>
+				
+				<tr>
+					<td>是否在修改同时更改:</td>
+					
+					<td>
+						是：<input type="radio" name="hidden_time_is_synchronization" value="1" <if condition="$inputInfo.column_attrs_string eq 1">checked="true"</if> />
+						否：<input type="radio" name="hidden_time_is_synchronization" value="0" <if condition="$inputInfo.column_attrs_string eq 0">checked="true"</if> />
+					</td>
+				</tr>
+				
+				<tr>
+					<td>是否需要验证：</td>
+					
+					<td>
+						是：<input type="radio" name="is_validate" value="1" <if condition="$inputInfo.is_validate eq 1">checked="true"</if>  />
+						否：<input type="radio" name="is_validate" value="0" <if condition="$inputInfo.is_validate eq 0">checked="true"</if>  />
+					</td>
+				</tr>
+				
+				
+				
+				<tr>
+					<td>是否需要验证：</td>
+					
+					<td>
+						是：<input type="radio" name="is_validate" value="1" <if condition="$inputInfo.is_validate eq 1">checked="true"</if>  />
+						否：<input type="radio" name="is_validate" value="0" <if condition="$inputInfo.is_validate eq 0">checked="true"</if>  />
+					</td>
+				</tr>
+				
+				<tr>
+					<td>长度验证：</td>
+					
+					<td>
+						最小：<input class="singleMinText" style="width:120px;" type="text" name="min_length" value="{$inputInfo.min_length}" />
+						最大：<input class="singleMinText" style="width:120px;"  type="text" name="max_length" value="{$inputInfo.max_length}" />
+					</td>
+				</tr>
+				
+				<tr>
+					<td>正则验证：</td>
+					
+					<td>
+						<select class="selectArea" name="validate_regexp">
+							<option value="0">---请选择验证类型---</option>
+							
+							<option value="notempty">非空</option>
+							<option value="username">用户注册,匹配由数字、26个英文字母或者下划线</option>
+							<option value="email">邮件</option>
+							<option value="mobile">手机</option>
+							<option value="intege">整数</option>
+							<option value="intege1">正整数</option>
+							<option value="num1">正数（正整数 + 0）</option>
+							<option value="num">数字</option>
+							
+							<option value="idcard">身份证</option>
+							<option value="letter">字母</option>
+							
+							<option value="num2">负数（负整数 + 0）</option>
+							<option value="intege2">负整数</option>
+							<option value="decmal">浮点数</option>
+							<option value="decmal1">正浮点数</option>
+							<option value="decmal2">负浮点数</option>
+							
+							
+							<option value="decmal3">浮点数</option>
+							<option value="decmal4">非负浮点数（正浮点数 + 0）</option>
+							
+							<option value="url">url</option>
+							<option value="chinese">仅中文</option>
+							<option value="zipcode">邮编</option>
+							
+							<option value="ip4">ip地址</option>
+							
+							<option value="date">日期</option>
+							
+							<option value="qq">QQ号码</option>
+							<option value="tel">电话号码的函数(包括验证国内区号,国际区号,分机号)</option>
+							
+							
+							<option value="letter_u">大写字母</option>
+							<option value="letter_l">小写字母</option>
+							
+							
+						</select>
+					</td>
+				</tr>
+				
+				
+				
+				<tr >
+					<td>操作：</td>
+					<td >
+					
+					<input type="hidden" name="tab_col_id" value="{$inputInfo.tab_col_id}"/>
+					<input class="button" type="submit"  value="提交"/> 
+					
+					</td>
+									
+				</tr>
+
+			</tbody>
+		</table>
+		</form>
+	</div>
+</div>
+<include file="Model:public_footer" /> 

@@ -1,0 +1,608 @@
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+
+/* Eric Meyer's Reset Stylesheet: http://meyerweb.com/eric/thoughts/2007/05/01/reset-reloaded/ */
+
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+body {
+	line-height: 1;
+	color: black;
+	background: white;
+}
+ol, ul , li{
+	list-style: none;
+}
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+caption, th, td {
+	text-align: left;
+	font-weight: normal;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+}
+blockquote, q {
+	quotes: "" "";
+}
+
+*{font-family:Arial, Helvetica, sans-serif;}
+/********************************      Basic Structure      ********************************/
+
+
+
+html {
+                font-size: 100%;
+                height: 100%;
+                margin-bottom: 1px; /* Always show a scrollbar to avoid jumping when the scrollbar appears  */
+                }
+
+body {
+                
+				font-family: "黑体", "宋体", Arial;
+                color: black;
+                -background: #f0f0f0 url('../images/bg-body.gif') top left repeat-y;
+                font-size: 14px;
+                }
+
+#body-wrapper {
+                -background: url('../images/bg-radial-gradient.gif') fixed 230px top no-repeat;
+                }                
+
+/********************************      Elements styling      ********************************/
+
+h1, h2, h3, h4, h5, h6 {
+                font-family: Helvetica, Arial, sans-serif;
+                color: #222;
+                font-weight: bold;
+                }
+
+h1            { font-family: Calibri, Helvetica, Arial, sans-serif; font-size: 31px; font-weight: bold; color: #fff; 
+				  position: absolute; top: -1000px;  /* Remove this line and delete the logo (in the HTML) if you don't want an image as a logo */
+				}
+				
+h2            { font-size: 26px; padding: 0 0 10px 0; }
+h3            { font-size: 17px; padding: 0 0 10px 0; }
+h4            { font-size: 16px; padding: 0 0 5px 0; }
+h5            { font-size: 14px; padding: 0 0 5px 0; }
+h6            { font-size: 12px; padding: 0 0 5px 0; }
+
+
+a              { color: #57a000; text-decoration: none; }
+a:hover     { color: #000; }
+a:active     { color: #777; }
+a:focus     { outline: 1px; }
+
+strong       { font-weight: bold; color: #333; }
+
+small   		{ font-size: 0.85em; }
+
+pre           { font-family: monospace; }
+
+p {
+                padding: 5px 0 10px 0;
+                line-height: 1.6em;
+                }
+
+/********************************      General Classes      ********************************/
+
+.clear {
+                clear: both;
+                }
+				
+.align-left {
+                float: left;
+                }
+				
+.align-right {
+                float: right;
+                }
+
+/************ Button ************/
+
+.norbtn{ padding-left:20px; padding-right:20px;}
+
+.button {
+				font-family: Verdana, Arial, sans-serif;
+                display: inline-block;
+                background: #459300 url('../images/bg-button-green.gif') top left repeat-x !important;
+                border: 1px solid #459300 !important;
+                padding: 4px 16px 4px 16px !important;
+                color: #fff !important;
+                font-size: 11px !important;
+                cursor: pointer;
+				
+				text-align:center;
+				
+                }
+				
+.button2 {
+				font-family: '黑体', Arial, sans-serif;
+				font-size:12px;
+                display: inline-block;
+                background: #459300 url('../images/bg-button-green.gif') top left repeat-x !important;
+                border: 1px solid #459300 !important;
+                padding: 4px 7px 4px 7px !important;
+                color: #fff !important;
+               
+                cursor: pointer;
+				padding-left:20px;
+				padding-right:20px;
+				
+				width:80px;
+                }				
+.button3 {
+				font-family: '黑体', Arial, sans-serif;
+                display: inline-block;
+                background: #459300 url('../images/bg-button-green.gif') top left repeat-x !important;
+                border: 1px solid #459300 !important;
+                padding: 4px 7px 4px 7px !important;
+                color: #fff !important;
+                font-size: 11px !important;
+                cursor: pointer;
+				padding-left:20px;
+				padding-right:20px;
+				
+				min-width:90px;
+                }
+                
+.button:hover,.button2:hover,.button3:hover {
+                text-decoration: underline;
+                }
+                
+.button:active {
+                padding: 5px 7px 3px 7px !important;
+                }
+				
+a.remove-link {
+				color: #bb0000;
+				}
+
+a.remove-link:hover {
+				color: #000;
+				}
+
+
+
+/********************************      Main Content      ********************************/
+
+/************ Layout ************/
+
+#main-content {
+                margin: 0 30px 0 30px;
+                padding: 0px 0 0 0;
+                }
+
+.column-left {
+                width: 48%;
+                float: left;
+                }
+                
+.column-right {
+                width: 48%;
+                float: right;
+                }
+               
+#page-intro {
+                font-size: 17px;
+                padding: 0 0 20px 0;
+                }
+
+				
+#footer {
+				-border-top: 1px solid #ccc;
+				margin: 0px 0 0 0;
+				padding: 20px 0;
+				font-size: 12px;
+                }
+/************ Lists ************/
+
+#main-content ul,
+#main-content ol {
+                padding: 10px 0;
+                }
+
+/* Unordered List */
+
+#main-content ul li {
+                
+                -padding: 4px 0 4px 20px;
+                }
+
+/* Ordered List */
+
+#main-content ol {
+                padding: 0 0 0 24px;
+                }
+
+#main-content ol li {
+                list-style: decimal;
+                padding: 4px 0;
+                }
+
+/*************** Content Box ***************/
+
+.content-box {
+                border: 1px solid #ccc;
+                margin: 0 0 20px 0;
+                background: #fff;
+                }
+
+.content-box-header {
+                background: #e5e5e5 url('../images/bg-content-box.gif') top left repeat-x;
+                margin-top: 1px;
+                height: 40px;
+                }
+
+.content-box-header h3 {
+                padding: 12px 15px 10px;
+                float: left;
+                }
+
+ul.content-box-tabs {
+                float: right;
+                padding: 12px 15px 0 0 !important;
+				margin: 0 !important;
+                }
+
+ul.content-box-tabs li {
+                float: left;
+                margin: 0;
+                padding: 0 !important;
+                background-image: none !important;
+                }
+                
+ul.content-box-tabs li a {
+                color: #333;
+                padding: 8px 10px;
+                display: block;
+                margin: 1px;
+                border-bottom: 0;
+                }
+
+ul.content-box-tabs li a:hover {
+                color: #57a000;
+                }              
+                
+ul.content-box-tabs li a.current {
+                background: #fff;
+                border: 1px solid #ccc;
+                border-bottom: 0;
+                margin: 0;
+                }
+
+.content-box-content {
+				margin-top:10px;
+                padding: 20px;
+				padding-top:0px;
+                font-size: 12px;
+                
+                }
+.content-box-content input{ font-size:13px;}
+/************ Table ************/
+
+#main-content table {
+				width:100%;
+                border-collapse: collapse;
+				//margin-left:2%; margin-right:2%;
+				margin-top:20px;
+                }
+                
+#main-content table thead th {
+                font-weight: bold;
+                font-size: 15px;
+                border-bottom: 1px solid #ddd;
+                }
+                
+#main-content tbody {
+                border-bottom: 1px solid #ddd;
+                }
+                
+#main-content tbody tr {
+                background: #fff;
+                }
+#main-content tbody tr td a {
+                font-weight:600
+            }
+              
+#main-content tbody tr.alt-row {
+                background: #f3f3f3;
+                }
+#main-content {}          
+#main-content table td,
+#main-content table th {
+				
+				font-size:14px;
+                padding: 10px;
+				padding-left:16px;
+				padding-right:6px;
+                line-height: 1.3em;
+                }        
+				
+#main-content table tfoot td .bulk-actions {
+                padding: 15px 0 5px 0;
+                } 
+				
+#main-content table tfoot td .bulk-actions select {
+                padding: 4px;
+				border: 1px solid #ccc;
+                }      
+				
+/*************** Pagination ***************/
+
+#main-content .pagination {
+				font-weight:600;
+                text-align: right;
+                padding: 20px 0 5px 0;
+                font-family: Verdana, Arial, Helvetica, sans-serif;
+                font-size: 10px;
+                }
+.pagination a {
+                margin: 0 5px 0 0;
+                padding: 3px 6px;
+                }
+
+.pagination a.number,.pagination span{
+				border: 1px solid #ddd;
+                }
+
+.pagination span.current {
+				margin: 0 5px 0 0;
+                padding: 3px 6px;
+                background: #469400 url('../images/bg-button-green.gif') top left repeat-x !important;
+                border-color: #459300 !important;
+                color: #fff !important;
+                }
+				
+.pagination span.current:hover {
+				text-decoration: underline;
+                }
+
+/************ Shortcut Buttons ************/
+
+.shortcut-button {
+                border: 1px solid #ccc;
+                background: #f7f7f7 url('../images/shortcut-button-bg.gif') top left no-repeat;
+                display: block;
+                width: 120px;
+                margin: 0 0 20px 0;
+                }
+
+.shortcut-button span {
+                border: 1px solid #fff;
+                display:block;
+                padding: 15px 10px 15px 10px;
+                text-align: center;
+                color: #555;
+                font-size: 13px;
+                line-height: 1.3em;
+                }
+
+.shortcut-button span img {
+                margin-bottom: 10px;
+                }
+
+.shortcut-button:hover {
+                background: #fff;
+				
+                }
+				
+.shortcut-button span:hover {
+				color: #57a000; 
+                }
+
+ul.shortcut-buttons-set li {
+                float: left;
+                margin: 0 15px 0 0;
+				padding: 0 !important;
+				background: 0;
+                }
+
+
+
+#sidebar {
+                background: url('../images/bg-sidebar.gif') top left no-repeat;
+                width: 230px;
+                height: 100%;
+                position: absolute;
+                left: 0;
+                top: 0;
+                color: #888;
+                font-size: 11px;
+                }
+
+#sidebar #sidebar-wrapper {
+                margin: 0 0 0 9px;
+                }
+
+#sidebar a,
+#sidebar a:active {
+                color:#ccc;
+                }
+
+#sidebar a:hover {
+                color:#fff;
+                }
+
+#sidebar #sidebar-title {
+                margin: 40px 0 40px 15px;
+                }
+
+#sidebar #logo {
+                margin: 40px 0 40px 0;
+                }
+
+#sidebar #profile-links {
+                padding: 0 15px 20px 15px;
+                text-align: right;
+                line-height: 1.5em;
+                }
+
+/************ Sidebar Accordion Menu ************/
+
+#sidebar #main-nav {
+                width: 206px;
+                padding: 0;
+                margin: 0 0 0 15px;
+                font-family: "黑体", "宋体", Arial;
+                }
+
+#sidebar #main-nav li {
+                list-style: none;
+                padding-bottom: 10px;
+                text-align: right;
+                }
+
+#sidebar #main-nav li a.nav-top-item {
+                background: transparent url('../images/bg-menu-item-green.gif') right center no-repeat; /* Background image for default color scheme - green */
+                padding: 10px 15px;
+                color: #FFF;
+                font-size: 16px;
+                cursor: pointer;
+                display: block;
+                text-decoration: none;
+                }
+
+#sidebar #main-nav li a.current {
+                background-image: url('../images/bg-menu-item-current.gif') !important;
+                color: #333;
+                font-weight: bold;
+                }
+                
+#sidebar #main-nav li a.current:hover {
+                color: #333;
+                }
+
+#sidebar #main-nav ul {
+                padding: 0;
+                font-size: 12px;
+                margin: 0;
+                }
+
+#sidebar #main-nav ul li {
+                list-style: none;
+                margin: 0;
+                text-align: right;
+				padding: 0;
+                }
+
+#sidebar #main-nav ul li a {
+                padding: 8px 15px;
+                display: block;
+                color: #aaa;
+                font-size: 13px;
+                line-height: 1.2em;
+                }
+
+#sidebar #main-nav ul li a:hover,
+#sidebar #main-nav ul li a.current,
+#sidebar #main-nav ul li a.current:hover {
+                color: #fff;
+                }
+
+#sidebar #main-nav ul li a.current {
+                background: transparent url('../images/menu-current-arrow.gif') right center no-repeat !important;
+                }
+
+
+
+/********************************      Sidebar      ********************************/
+
+#sidebar {
+                background: url('../images/bg-sidebar.gif') top left no-repeat;
+                width: 230px;
+                height: 100%;
+                position: absolute;
+                left: 0;
+                top: 0;
+                color: #888;
+                font-size: 11px;
+                }
+
+#sidebar #sidebar-wrapper {
+                margin: 0 0 0 9px;
+                }
+
+#sidebar a,
+#sidebar a:active {
+                color:#ccc;
+                }
+
+#sidebar a:hover {
+                color:#fff;
+                }
+
+#sidebar #sidebar-title {
+                margin: 40px 0 40px 15px;
+                }
+
+#sidebar #logo {
+                margin: 40px 0 40px 0;
+                }
+
+#sidebar #profile-links {
+                padding: 0 15px 20px 15px;
+                text-align: right;
+                line-height: 1.5em;
+                }
+
+
+#my_tab{ float:right; margin-right:60px;}
+#my_tab li{ float:left;}
+#my_tab li a{  font-size:15px; font-weight:600; font-family: "黑体"}
+#my_tab li a:hover{}
+
+*{margin:0; padding:0}
+.add_type input{ min-width:80px; text-align:center;  font-weight:600}
+#checkbox{ height:14px;}
+.singletext{height:24px; text-align:center;  }
+
+.singleErea{height:24px; text-align:center; }
+
+.singleMinText{height:24px; text-align:center;   margin-bottom:2px;}
+.selectArea{min-width:172px; height:30px;}
+.selectMinArea{width:100px;height:24px;}
+.add_type select{ min-width:170px; height:30px;}
+
+/*--------------------------Dialog----------------------------------*/
+
+body{ position: relative;}
+#my_cover{position:absolute; background-color:white; opacity:0.7;left:0; top:0}
+#my_main{ position:absolute;border:1px dashed green; border-top:none; background-color:white; display:none}
+
+/*--------------------------表格列表----------------------------------*/
+.dragSort tr {border:1px solid #dddddd; padding:0;  position:relative}
+.dragSort{width:100%; position:relative; margin:10px auto; display:block;}
+.dragSort div {width:100%; height:30px; float:left; list-style:none; margin:2px; z-index:1; overflow:hidden;cursor:pointer}
+.dragSort .active {border:2px dashed red; background:#dddddd}
+.dragSort  .drag_span{ display:block;float:left; border:1px solid #dddddd;height:28px; line-height:28px; text-align:center; font-size:14px;}
+.table_footer{ position:absolute; bottom:10px; left:0; height:30px; line-height:25px; text-align:right}
+
+.search_ul_tt li{ float:left; -background:red; height:26px; display:block; margin-right:20px;}
+
+
+

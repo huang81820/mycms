@@ -1,0 +1,13 @@
+
+<select style="width:176px; height:27px;" id="{$id}" name="{$name}">
+	<option value="">---请选择{$column_desc}---</option>
+	<?php foreach($options as $val){
+		$select='';
+		if($val['value']==$value){
+			$select=' selected="selected"';
+		}
+	?>
+		<option {$select} value="{$val[$attrs_arr['value_key']]}">{$val[$attrs_arr['value_desc']]}</option>
+	<?php } ?>
+</select>
+

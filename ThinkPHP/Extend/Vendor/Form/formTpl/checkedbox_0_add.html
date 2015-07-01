@@ -1,0 +1,16 @@
+<style>
+.CHECKED_BOX{ width:600px;;}
+.CHECKED_BOX li{ width:200px; height:26px;  float:left}
+</style>
+
+
+<ul class="CHECKED_BOX">
+<?php foreach($result as $key=>$val){ ?>
+	
+	<li>
+		<input name="{$name}[]" class="{$id}" type="checkbox" value="{$val[$attrs_arr['value_key']]}">{$val[$attrs_arr['value_desc']]}&nbsp;
+	</li>
+	
+	<?php } ?>
+
+</ul>

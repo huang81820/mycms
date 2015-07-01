@@ -1,0 +1,33 @@
+<include file="./Admin/Tpl/Templates/default/header.html" />
+
+	<div id="com_desc_wrap">
+		
+	</div>
+	
+	<div id="com_desc_con">
+		<div id="com_desc_con_con">
+			
+			<img id="jituan_top_logo" src="__PUBLIC__/statics/default/images/pro_tit2.png"  />
+			
+			<div id="nor_con_wrap">
+				
+				<p style="text-align:right; font-size:12px; margin-bottom:8px; margin-right:40px;">搜索结果：About <span style="color:red"><?php  echo count($result); ?></span> results （Use 0.24 Second）<p>
+				<ul id="pro_list2" >
+				<?php foreach($result as $artRow){ ?>
+					<li><a href="{$Think.const.CON_PATH}/{$artRow[product_id]}/cat_id/{$artRow[cat_id]}"><img src="{$artRow['thumb']}" /></a></li>
+				<?php } ?>	
+					<div class="clear"></div>
+				</ul>
+			</div>
+		</div>
+		<div id="com_desc_con_bo"></div>
+		<div id="com_desc_side">
+			<?php $subcat = sub_cat(25) ?>
+			<ul id="side_nav">
+				<?php foreach($subcat as $subcatRow){ ?>
+				<li><a href="{$Think.const.CAT_PATH}/{$subcatRow[category_id]}">{$subcatRow['cat_name']}</a></li>
+			<?php } ?>	
+			</ul>
+		</div>
+	</div>
+<include file="./Admin/Tpl/Templates/default/footer.html" />

@@ -1,0 +1,21 @@
+<include file="./Admin/Tpl/Templates/mobile/header.html" />	
+	<div class="position">
+		<div class='position_con'>
+			{$site_nav}
+		</div>
+	</div>
+	
+	<div class="width96 martop20"  >
+		<ul id="nor_txt_list">
+			<?php $subcat = sub_cat(cat_id()) ?>
+			<?php foreach($subcat as $subcatRow){ ?>
+			<li><a href="{$Think.const.CAT_PATH}/{$subcatRow[category_id]}">{$subcatRow['cat_name']}</a></li>
+			<?php } ?>	
+			
+		</ul>
+	</div>
+	
+	<div class='fixed_height800'></div>
+	
+	
+<include file="./Admin/Tpl/Templates/mobile/footer.html" />	

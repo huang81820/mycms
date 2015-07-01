@@ -1,0 +1,98 @@
+<include file="./Admin/Tpl/Templates/mobile/header.html" />
+
+<?php $imgArr = unserialize($show_pro_imgs);?>
+
+
+
+
+<script>
+
+
+    var picArr = [];
+    <?php foreach($imgArr as $val){
+        $temp = $val['url'];
+        echo 'picArr.push("'.$temp.'");';
+    }?>
+
+    var index=0;
+    $(document).ready(function(){
+
+//        for(var i=0;i<picArr.length;i++){
+//
+//            var str='<img src="'+picArr[i]+'" />';
+//            $('#mobile_pro_content').append( str );
+//        }
+
+//        function loadImgs(){
+//
+//            $('#newLoading').show();
+//
+//            for(var i=0; i<3; i++){
+//
+//                if(index >= picArr.length) return;
+//
+//                var str='<img src="'+picArr[index]+'" style="display:block" />';
+//                $('#mobile_pro_content').append( str );
+//                index+=1;
+//            }
+//            $('#newLoading').delay(500).hide();
+//
+//        }
+//
+//        $(document).scroll(function(){
+//            var isBottom = $(document).height() - ( $(window).height() + $(window).scrollTop() );
+//
+//            if(isBottom<100  ){
+//                alert(index);
+//                loadImgs();
+//            }
+//        });
+//        loadImgs();
+//
+//
+//    });
+
+
+
+</script>
+
+
+
+
+<div class="m_lkuai" style="margin:0 auto">
+	<div class="m_lkuai_l">
+		<a href="__APP__/Content/lists/cat_id/102">
+			<img src='__PUBLIC__/statics/default/images/pro2.png'/>
+		</a>
+	</div>
+	<div class="m_lkuai_r">
+		<a href="#">
+			<img src='__PUBLIC__/statics/default/images/pro3.png'/>
+		</a>
+	</div>
+</div>
+
+<div class="md10"></div>
+
+<div class="show_pro_df" id="mobile_pro_content">
+{$show_content}
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<include file="./Admin/Tpl/Templates/mobile/footer.html" />

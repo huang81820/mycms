@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Simpla Admin</title>
+<include file="Admin:Resources" />
+
+</head>
+<body>
+	<div id="body-wrapper"> 
+		<div id="main-content"> 
+			<div class="content-box">
+				
+				<div class="content-box-header">
+					
+					<h3>Excel导入</h3>
+					
+					<ul id="my_tab">
+						{$excel_btn}
+						
+					</ul>
+					<div class="clear"></div>
+				</div> 
+				
+				
+				<div class="content-box-content">
+					
+					<table>
+						<tr>
+							<td colspan='1'>上次导入日志:</td>
+							<td colspan='1'>时间:&nbsp;<?php echo date('Y-m-d H:i:s',$last_time); ?></td>
+							<td colspan='100'>{$back_del_btn}</td>
+						</tr>
+					
+						<tr>
+							<td colspan='100' style="color:green">成功导入记录：<?php echo count($successRows); ?>条</td>
+						</tr>
+						<tr></tr>
+						<tr>
+							<td>id</td>
+						<?php foreach($successRows[0] as $key=>$value){
+							if($key!='excel_last_id'){
+						?>
+							<td><?php echo $key; ?></td>
+						<?php  } } ?>
+						</tr>
+						
+						<?php foreach($successRows as $value){?>
+						<tr>
+							<td><?php echo $value['excel_last_id']; ?></td>
+							<?php foreach($value as $cellKey=>$cell){ 
+								if($cellKey!='excel_last_id'){
+							?>
+							<td><?php echo $cell; ?></td>
+							<?php } } ?>
+						</tr>
+						<?php } ?>
+						
+						
+						<tr>
+							<td colspan='100' style="color:red">导入失败(查重错误)：<?php echo count($errorRepeatRows); ?>条</td>
+						</tr>
+						
+						<?php foreach($errorRepeatRows as $value){?>
+						<tr>
+							<?php foreach($value as $cellKey=>$cell){ 
+								if($cellKey<=5){
+							?>
+							<td><?php echo $cell; ?></td>
+							<?php } } ?>
+						</tr>
+						<?php } ?>
+						
+						
+						<tr>
+							<td colspan='100' style="color:red">导入失败(空错误)：<?php echo count($errorEmptyRows); ?>条</td>
+						</tr>
+						
+						<?php foreach($errorEmptyRows as $value){?>
+						<tr>
+							<?php foreach($value as $cellKey=>$cell){ 
+								if($cellKey<=5){
+							?>
+							<td><?php echo $cell; ?></td>
+							<?php } } ?>
+						</tr>
+						<?php } ?>
+						
+						<tr>
+							<td colspan='100' style="color:red">导入失败(插入错误)：<?php echo count($errorInsertRows); ?>条</td>
+						</tr>
+						
+						<?php foreach($errorInsertRows as $value){?>
+						<tr>
+							<?php foreach($value as $cellKey=>$cell){ 
+								if($cellKey<=5){
+							?>
+							<td><?php echo $cell; ?></td>
+							<?php } } ?>
+						</tr>
+						<?php } ?>
+						
+						<tr>
+							<td colspan='100' style="color:red">导入失败(映射错误)：<?php echo count($errorDataMapRows); ?>条</td>
+						</tr>
+						
+						<?php foreach($errorDataMapRows as $value){?>
+						<tr>
+							<?php foreach($value as $cellKey=>$cell){ 
+								if($cellKey<=5){
+							?>
+							<td><?php echo $cell; ?></td>
+							<?php } } ?>
+						</tr>
+						<?php } ?>
+					</table>
+					
+				</div> 
+				
+			</div>
+		<div class="clear"></div>
+			
+		</div> 
+</div>
+	
+</body>
+</html>

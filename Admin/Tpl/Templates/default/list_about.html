@@ -1,0 +1,35 @@
+<include file="./Admin/Tpl/Templates/default/header.html" />
+	<div id="main_contact">
+		<div id="main_contact_con">
+			<img src="{$list_thumb}" />
+			<div id="contact_con_left">
+				<div id="side_nav_wrap">
+					<div id="side_nav_con">
+						<img id="about_tit" src="__PUBLIC__/statics/default/images/about_tit.png" />
+						<ul id="side_nav2" cat_id="<?php echo cat_id(); ?>" >
+							<?php $subcat = sub_cat(top_parent(cat_id())) ?>
+							<?php foreach($subcat as $subcatRow){ ?>
+							<li cat_id="{$subcatRow[category_id]}"><a href="{$Think.const.CAT_PATH}/{$subcatRow[category_id]}">{$subcatRow['cat_name']}</a></li>
+							<?php } ?>	
+						</ul>
+						<div class="clear"></div>
+					</div>
+					<div id="side_nav_bo_bg"></div>
+				</div>
+			</div>
+			<div id="contact_con_right">
+				<div id="contact_con_right_mid">
+					<div id="contact_tit">
+						<span id="contact_tit_desc">{$list_cat_name}</span>
+						<span id="contact_tit_btn"></span>
+					</div>
+					<div id="contact_con_con">
+						<?php $art = cat2article(cat_id(),$is_all=1,$num=1) ?>
+						{$art['lists'][0]['content']}
+					</div>
+				</div>
+				<div id="contact_con_right_bo"></div>
+			</div>
+		</div>
+		
+<include file="./Admin/Tpl/Templates/default/footer.html" />

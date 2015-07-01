@@ -1,0 +1,24 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>信息管理中心</title>
+<link rel="stylesheet" href="__PUBLIC__/css/style.css" type="text/css" media="screen" />
+<style>
+body{padding-left:30px;}
+</style>
+
+	
+
+
+
+</head>
+<body>
+<div id="footer" style="">
+	<font style="font-size:13px;"> 
+		&#169; Copyright 2009 Your Company | Powered by <a href="#">Simpla Admin</a> | <a href="#">Top</a>
+	</font>
+</div>
+</body>
+</html>

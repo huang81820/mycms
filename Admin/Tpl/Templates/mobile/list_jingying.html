@@ -1,0 +1,18 @@
+<include file="./Admin/Tpl/Templates/mobile/header.html" />	
+	<div class="position">
+		<div class='position_con'>
+			{$site_nav}
+		</div>
+	</div>
+	
+	<div class="width96 martop20 nor_con"  >
+		<img src="{$list_thumb}" />
+	</div>
+	
+	<div class="width96 nor_con">
+		<?php $art = cat2article(cat_id(),$is_all=1,$num=1) ?>
+		{$art['lists'][0]['content']}
+	</div>
+	
+	
+<include file="./Admin/Tpl/Templates/mobile/footer.html" />	

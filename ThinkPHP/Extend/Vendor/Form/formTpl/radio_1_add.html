@@ -1,0 +1,9 @@
+
+	<?php foreach($options as $key=>$val){
+		$check='';
+		if($key==0){
+			$check=' checked="true"';
+		}
+	 ?>
+		{$val['desc']}:&nbsp;&nbsp;<input {$check} id="{$id}" name="{$name}" type="radio" value="{$val['value']}" />&nbsp;&nbsp;&nbsp;&nbsp;
+	<?php } ?>

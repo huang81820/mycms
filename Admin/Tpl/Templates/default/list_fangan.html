@@ -1,0 +1,84 @@
+<include file="./Admin/Tpl/Templates/default/header.html" />
+
+<div class="md20"></div>
+
+<ul class="fangan_ul">
+	<?php $subcat = sub_cat(top_parent(cat_id())) ?>
+	
+	<?php foreach($subcat as $subcatRow){ ?>
+	<li><a href="{$Think.const.CAT_PATH}/{$subcatRow[category_id]}" class="fangan_ul_a_d <?php if(cat_id()==$subcatRow['category_id']) {echo 'fangan_li_nor'; } ?>">{$subcatRow['cat_name']}</a></li>
+	<?php } ?>	
+	
+	
+	
+</ul>
+
+<div class="md30"></div>
+
+<?php $ad = getByModules(25,'advertise_id=3'); ?>				
+<?php $picArr = unserialize($ad[0]['pics']); ?>
+
+<div class="anli_banner">
+	<?php 
+		$ad_img_url =='';
+		$ad_img_href =='';
+		$cat_oid = cat_id();
+		
+		if( $cat_oid==57 ) { $ad_img_url = $picArr[0]['url']; $ad_img_href = $picArr[0]['href'];}
+		if( $cat_oid==58 ) { $ad_img_url = $picArr[1]['url']; $ad_img_href = $picArr[0]['href'];}
+		if( $cat_oid==97 ) { $ad_img_url = $picArr[2]['url']; $ad_img_href = $picArr[0]['href'];}
+		if( $cat_oid==98 ) { $ad_img_url = $picArr[3]['url']; $ad_img_href = $picArr[0]['href'];}
+		if( $cat_oid==96 ) { $ad_img_url = $picArr[4]['url']; $ad_img_href = $picArr[0]['href'];}
+	
+	?>
+	<a href='<?php echo $ad_img_href;?>'>
+		<img src='<?php echo $ad_img_url;?>'  />
+	</a>
+</div>
+
+<div class="md20"></div>
+
+<ul class="an_ufl">
+
+	<?php $anlis = cat2article($cat_id=cat_id(),$is_all=1,$num=50,$order='no')?>
+	
+	<foreach name="anlis.lists" item="vo">
+
+	<li >
+		<a href='{$Think.const.CON_PATH}/{$vo[catalog_id]}/cat_id/{$vo[cat_id]}'>
+            <div class="wrap_img">
+		    	<img class="an_img" src="<?php echo $vo['thumb']?>" />
+            </div>
+			<div class="md10"></div>
+
+
+            <?php $ids = explode(',',$vo['re_pro_ids']);
+                if(!empty($ids[0])){
+                    $pro = M('product')->find($ids[0]);
+                }
+
+            ?>
+			<div class="">
+				<div class="li_left_img">
+					<img src='<?php echo $pro['thumb'];?>' class="li_img_r"/>
+					<p class="li_pe"><?php echo $pro['title'];?></p>
+				</div>
+				
+				<div class="li_right_info">
+					<div class="md20"></div>
+					<p class="an_li_p1"><?php echo $vo['title']?></p>
+					<p class="an_li_p2"><?php echo $vo['title2']?></p>
+					<p class="an_li_p3"><?php echo $vo['title3']?></p>
+				</div>
+			</div>
+		</a>
+	</li>
+	</foreach>
+	
+	
+</ul>
+
+<div class="md50"></div>
+
+
+<include file="./Admin/Tpl/Templates/default/footer.html" />

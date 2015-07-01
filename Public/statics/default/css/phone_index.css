@@ -1,0 +1,81 @@
+@font-face {
+ font-family: NOTOSANSHANS;
+ src:url(NOTOSANSHANS-LIGHT.OTF);
+}
+
+@font-face {
+ font-family: NOTOSANSHANS2;
+ src:url(NOTOSANSHANS-THIN-WINDOWS.OTF);
+}
+
+@font-face {
+ font-family: NOTOSANSHANS3;
+ src:url(NOTOSANSHANS-BOLD.OTF);
+}
+
+*{ margin:0; padding:0; font-family:NOTOSANSHANS2; }
+li{ list-style:none;}
+img{ border:none;  max-width:100%; display:block}
+a{ text-decoration:none; color:black;}
+.clear{ clear:both;}
+body{   }
+
+#wrap{width:100%;  min-height:500px; max-width:1080px;  margin:0 auto}
+
+#top{ width:100%; height:56px;  background:url(../ph_img/top_bg.jpg) repeat-x; }
+#logo{width:28.148148%;}
+
+#main{width:100%;height:854px; background:url(../ph_img/main_bg.jpg) no-repeat; overflow:hidden}
+#logo_big{margin:0 auto; width:59.7222%; margin-top:100px;}
+
+
+#nav_wrap{width:100%; height:84px; background:url(../ph_img/nav_bg.png) no-repeat center top; margin-top:132px;}
+#nav{width:100%; height:84px; background:url(../ph_img/nav_bg.png) no-repeat center bottom;}
+#nav li{ float:left; width:18% }
+#nav li a{color:white; font-size:34px; text-align:center; display:block; width:100%}
+#nav li p{color:white; font-size:16px; text-align:center; font-family:NOTOSANSHANS2}
+
+#lilian{width:78.703703%; margin:0 auto; margin-top:78px;}
+
+#pro{width:100%; min-height:400px;  }
+
+#pro_logo{ margin:0 auto; margin-top:68px; }
+
+
+
+#play_wrap{width:100%; margin-top:34px; overflow: hidden; position:relative; }
+#play{ width:100%;}
+#play li{width:100%;position: relative;float: left;}
+
+#play_nav_wrap{position:absolute; width:100%; height:20px;left:0px; bottom:0px;z-index:999999999; }
+#ban-position{ margin:0 auto; height:20px;width:100%;   }
+
+
+
+
+#ban-position canvas
+{
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.1);
+	border: none;
+	border-radius: 6px;
+	margin: 4px 2px;
+	background:black;
+}
+
+#ban-position .canvas-on
+{
+	background: -webkit-gradient(linear, 50% 0%, 50% 100%, from(#e94609), to(#cb3c07));
+	box-shadow: 0 1px 2px rgba(0,0,0,.2);
+}
+
+
+
+
+#footer{ overflow:hidden;width:100%; height:83px; background:url(../ph_img/bottom_bg.jpg) repeat-x; margin-top:26px;}
+#footer p{ color:white; font-size:18px;text-align:center; margin-top:5px; line-height:22px;}
+
+
+
+
+
+

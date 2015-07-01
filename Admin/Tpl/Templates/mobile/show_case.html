@@ -1,0 +1,43 @@
+<include file="./Admin/Tpl/Templates/mobile/header.html" />	
+	<div class="position">
+		<div class='position_con'>
+			{$site_nav}
+		</div>
+	</div>
+	
+	<div class="width96 martop20"  >
+		<p class="case_list_tit">案例1</p>
+		<div id="case_play_wrap">
+			<ul id="case_play">
+				<?php $cata = unserialize($show_catalog); ?>
+				<?php foreach($cata as $row){ ?>
+				<li><img src="{$row['url']}" /></li>
+				<?php } ?>
+			</ul>
+			
+			<nav class="ban-position">
+				<canvas height="20" width="20" class="canvas-on"></canvas>
+				<canvas height="20" width="20"></canvas>
+			</nav>
+		
+		</div>
+		<div class="nor_con martop20">
+			{$show_content}
+		</div>
+	</div>
+	
+	<script>
+	$(document).ready(function(){
+		$("#case_play_wrap").Swipe({
+				auto: 4000,
+				continuous: true,
+				disableScroll:false,
+				callback: function(index, elem) {
+					$(".ban-position canvas").eq(index).addClass("canvas-on").siblings("canvas").removeClass("canvas-on");
+					}
+		});
+	});
+	</script>
+	
+	
+<include file="./Admin/Tpl/Templates/mobile/footer.html" />	

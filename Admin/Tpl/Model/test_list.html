@@ -1,0 +1,68 @@
+<include file="Model:public_header" /> 
+<style>
+
+table tr td{border:1px solid #dddddd}
+</style>
+
+<div class="content-box-header CM_header">
+					
+	<h3>Table列表</h3>
+	
+	<ul id="my_tab">
+		<li><a id="" href="{:U('Model/add_table')" ></a></li>
+		
+		
+	</ul>
+	<div class="clear"></div>
+</div> 
+				
+				
+<div class="content-box-content CM_boxList">
+	
+	<div class="tab-content default-tab" id="tab1">
+					
+		<table>
+			<thead>
+				<tr>
+					<td><input type="checkbox" value="0"  class="SELECT_ALL"/></td>
+					
+					<td>ID</td>
+					<td>表名称</td>
+					
+
+					<td>操作</td>
+
+
+				</tr>
+			</thead>
+			<tbody>
+				
+			<foreach name="table_list" item="vo" key="key">
+				
+				
+				<tr>
+					<td><input type="checkbox" value="{$vo.hnews_id}" /></td>
+					
+					<td>{$vo.table_id}</td>
+					<td>{$vo.table_name}</td>
+				
+
+
+					<td>
+						<a href="{:U('Model/table_column_list',array('table_id'=>$vo['table_id']) ) }" title="字段管理">字段管理</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+						<a href="{:U('Model/table_list_manage',array('table_id'=>$vo['table_id']) ) }" title="字段管理">列表管理</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+						<a id="" href="{:U('Model/Test_from',array('table_id'=>$vo['table_id']))}" >表单预览</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+						<a onclick="return confirm('是否确定要删除该数据表？');" href="{:U('Model/del_table',array('table_id'=>$vo['table_id'])) }" title="删除">删除</a> 
+						 
+					</td>
+				</tr>
+			</foreach>
+			</tbody>
+		</table>
+		
+	</div>
+</div>
+		
+		
+<include file="Model:public_footer" /> 		
+	

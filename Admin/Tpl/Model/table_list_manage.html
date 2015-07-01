@@ -1,0 +1,252 @@
+<include file="Model:public_header" /> 
+<style>
+
+table tr td{border:1px solid #dddddd}
+.myclear{ clear:both}
+</style>
+
+<script>
+$(document).ready(function(){
+	
+	
+	
+	$('table').delegate('.DD_ADD_LIST_params','click',function(){
+		
+		var row_index = $(this).attr('row_index');
+		var input_wrap = $(this).parent().parent().find('.DD_ADD_LIST_PARAM_WRAP');
+		
+		
+		var options = '<foreach name="all_column" item="vo" >  <option value="{$vo.column_name}">{$vo.column_name}</option>  </foreach>';	
+		
+		var str='';
+		str += '<select class="list_params_select_class" name="other_params_value_'+row_index+'[]" >';
+		str += '<option value="0">无</option>';
+		str += options;
+		str += '</select><div class="myclear"></div>';
+		input_wrap.append(str);
+	});
+	
+	
+	$('table').delegate('.DD_DEL_LIST_params','click',function(){
+		
+		var select = $(this).parent().parent().find('.list_params_select_class').last();
+		
+		select.remove();
+		
+	});
+	
+	
+	
+	
+	$('#DD_DEL_LIST_params').click(function(){
+		var last = $(this).parent().parent().find('select[name="other_params_value[]"]').last();
+		
+		//alert(br.length);
+		
+		if(  $('.list_params_select_class').length>1   ){
+			last.remove();
+		}
+		
+	});
+	
+	$('#DD_ADD_LIST_button').click(function(){
+		
+		var now_index = $('.list_button_row_active').length;
+	//alert(now_index);
+		var html = $('#list_button_row').html();
+		var str='';
+		str+='<tr class="list_button_row_active">';
+		str+=html;
+		str+='</tr>';
+		
+		$('#list_button_table tbody').append(str);
+		
+		//alert($('.list_button_row_active').length);
+		$('.list_button_row_active').last().find('.DD_ADD_LIST_params').attr('row_index',now_index);
+		$('.list_button_row_active').last().find('.DD_DEL_LIST_params').attr('row_index',now_index);
+		
+	});
+	$('#DD_DEL_LIST_button').click(function(){
+		$('.list_button_row_active').last().remove();
+	});
+	
+	$('#list_button_table').delegate('.DD_DEL_button','click',function(){
+		if(confirm('你确认删除该按钮？')){
+		
+			$(this).parent().parent().remove();
+		}
+	})
+	
+});
+
+
+
+</script>
+
+
+<div class="content-box-header CM_header" >
+					
+	<h3>联动菜单列表</h3>
+	
+	<ul id="my_tab">
+		<li><a id="" href="#" ></a></li>
+		
+		
+		
+		
+	</ul>
+	<div class="clear"></div>
+</div> 
+								
+<div class="content-box-content">
+	
+	<div class="tab-content default-tab" id="tab1">
+					
+		
+		<hr/>
+					
+				
+
+					
+		<form action="__APP__/Model/do_edit_list_attr" method="post">			
+		<table id="list_button_table">
+
+			
+
+					<thead>
+						<tr>
+							
+							
+							
+							<td>列名</td>
+							<td>列类型</td>
+							
+
+							<td colspan='2'>操作</td>
+							
+
+						</tr>
+					</thead>
+					<tbody>
+						
+					<foreach name="list_column" item="vo" key="key">
+										
+						<tr>
+							
+							
+							<td>{$vo.column_name}</td>
+							<td>{$vo.column_type}</td>
+							
+						
+			
+			
+							<td colspan="2" >
+								<if condition="($vo.column_type eq 'singleErea') OR ($vo.column_type eq 'multiErea') OR ($vo.column_type eq 'edictor')" >
+									长度：<input class="singleErea" type="text" name="list_congif[]" value="{$vo.list_attr}"/> 
+											<input type="hidden" name="column_ids[]" value="{$vo.tab_col_id}"/>
+								</if>
+							
+								<if condition="($vo.column_type eq 'date') OR ($vo.column_type eq 'date_time') OR ($vo.column_type eq 'date_range')OR ($vo.column_type eq 'date_time_range')" >
+									格式：<input class="singleErea" type="text" name="list_congif[]"  value="{$vo.list_attr}"/>	
+									<input type="hidden" name="column_ids[]" value="{$vo.tab_col_id}"/>
+								</if>
+														
+							</td>
+							
+						</tr>
+					</foreach>
+					
+					<tr>
+						<td colspan="3" style="text-align:center">操作按钮
+							<span id="DD_ADD_LIST_button" style="color:red; cursor:pointer">[ + ]</span>
+							<span id="DD_DEL_LIST_button" style="color:green; cursor:pointer">[ - ]</span>
+						</td>
+						<td>删除</td>
+					</tr>
+					
+					<foreach name="table_button" item="vo" key="key_row">
+					<tr class="list_button_row_active" style="-display:none">				
+						<td>按钮名称:<input class="singleErea" type="text" name="list_button_name[]" value="{$vo.desc}"/></td>
+						<td colspan="1">
+							按钮连接:  <input class="singleErea" type="text" name="list_button_href[]"  value="{$vo.href}" />
+							
+						</td>
+						<td colspan="1">
+							<div style="float:left">
+								<span class="DD_ADD_LIST_params" style="color:red; cursor:pointer" row_index="{$key_row}">[ + ]</span>
+								<span class="DD_DEL_LIST_params" style="color:green; cursor:pointer" row_index="{$key_row}" >[ - ]</span>值:
+							</div>
+							
+							<div style="float:left" class="DD_ADD_LIST_PARAM_WRAP">
+									<foreach name="vo.otherParams" item="vo2" key="key2">
+									<select class="list_params_select_class" name="other_params_value_{$key_row}[]"  >
+											<option value="0">无</option>
+											<foreach name="all_column" item="vo3" >
+												<option value="{$vo3.column_name}" <if condition="$vo2.value eq $vo3.column_name ">selected="true"</if> >{$vo3.column_name}</option>
+											</foreach>								
+									</select>
+									<div class="myclear"></div>
+									</foreach>	
+									
+								
+							</div>	
+							
+						</td>
+						<td >
+							<a class="DD_DEL_button" href="#" style="color:blue; cursor:pointer;font-weight:400;" >[ - ]</a>
+						</td>
+
+					</tr>
+					</foreach>
+					
+					
+					</tbody>
+					<tfoot>
+						<tr>
+							<td colspan="4" style="text-align:center">
+								<input type="submit" value="提交" class="button"/>
+								<input type="hidden" name="table_id" value="{$table_id}"/>
+							</td>
+						</tr>
+					
+					</tfoot>
+		</table>
+		</form>
+	</div>
+</div>
+		<table style="display:none">
+			<tr id="list_button_row" >				
+				<td>按钮名称:<input class="singleErea" type="text" name="list_button_name[]"/></td>
+				<td colspan="1">
+					按钮连接:  <input class="singleErea" type="text" name="list_button_href[]"  />
+					
+				</td>
+				<td colspan="1">
+					<div style="float:left">
+						<span class="DD_ADD_LIST_params" style="color:red; cursor:pointer">[ + ]</span>
+						<span class="DD_DEL_LIST_params" style="color:green; cursor:pointer">[ - ]</span>值:
+					</div>
+					
+					<div style="float:left" class="DD_ADD_LIST_PARAM_WRAP">
+						<!--
+							<select class="list_params_select_class" name="other_params_value[]"  >
+									<option value="0">无</option>
+									<foreach name="all_column" item="vo" >
+										<option value="{$vo.column_name}">{$vo.column_name}</option>
+									</foreach>								
+							</select>
+							
+							<div class="myclear"></div>
+						-->
+					</div>	
+					
+				</td>
+				
+				<td >
+					<a class="DD_DEL_button" href="#" style="color:blue; cursor:pointer;font-weight:400;" >[ - ]</a>
+				</td>
+			</tr>
+		</table>				
+		
+<include file="Model:public_footer" /> 		
+	

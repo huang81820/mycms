@@ -1,0 +1,46 @@
+<include file="./Admin/Tpl/Templates/default/header.html" />
+	<div id="main_contact">
+		<div id="main_contact_con">
+			<img src="{$origin_cat['thumb']}" />
+			<div id="contact_con_left">
+				<div id="side_nav_wrap">
+					<div id="side_nav_con">
+						<img id="about_tit" src="__PUBLIC__/statics/default/images/news_side_tit.png" />
+						<ul id="side_nav2" cat_id="<?php echo cat_id(); ?>" >
+							<?php $subcat = sub_cat(top_parent(cat_id()));  ?>
+							<?php foreach($subcat as $subcatRow){ ?>
+							<li cat_id="{$subcatRow[category_id]}"><a href="{$Think.const.CAT_PATH}/{$subcatRow[category_id]}">{$subcatRow['cat_name']}</a></li>
+							<?php } ?>	
+						</ul>
+						<div class="clear"></div>
+					</div>
+					<div id="side_nav_bo_bg"></div>
+				</div>
+			</div>
+			<div id="contact_con_right">
+				<div id="contact_con_right_mid">
+					<div id="contact_tit">
+						<span id="contact_tit_desc">{$origin_cat['cat_name']}</span>
+						<span id="contact_tit_btn"></span>
+					</div>
+					<div id="contact_con_con">
+						<p id="show_news_tit">{$show_title}</p>
+						<p id="show_news_time">发布时间： <?php echo date('Y-m-d',$show_datetime) ?></p>
+						<div id="contact_con_con_con" style="-background:red" >
+							{$show_content}
+						</div>
+						<div id="pre_next">
+							{$pre}
+						</div>
+						<div id="pre_next2">
+							{$next}
+						</div>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<div id="contact_con_right_bo"></div>
+			</div>
+		</div>
+		<div class=""></div>
+		
+<include file="./Admin/Tpl/Templates/default/footer.html" />

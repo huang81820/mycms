@@ -1,0 +1,101 @@
+<include file="Model:public_header" /> 
+<style>
+
+table tr td{border:1px solid #dddddd}
+</style>
+
+<div class="content-box-header CM_header">
+					
+	<h3>搜索器设置</h3>
+	
+	
+	<div class="clear"></div>
+</div> 
+				
+				
+<div class="content-box-content CM_boxList">
+	
+	<div class="tab-content default-tab" id="tab1">
+					
+		
+		<form action="__APP__/Model/set_search_option" method="post">			
+		<table>
+			<thead>
+				<tr>
+					
+					
+					<td>列名</td>
+					<td>列类型</td>
+					
+
+					<td>匹配方式</td>
+
+
+				</tr>
+			</thead>
+			<tbody>
+				
+			<foreach name="search_column" item="vo" key="key">
+				
+				
+				<tr>
+					
+					
+					<td>{$vo.column_name}</td>
+					<td>{$vo.column_type}</td>
+				
+
+
+					<td>
+						<input type="hidden" value="{$vo.tab_col_id}+{$vo.column_type}" name="tab_col_id[]" />
+					<if condition="$vo.column_type eq 'singleErea' ">
+						<select name="match_method_{$vo.tab_col_id}">
+							<foreach name="search_option" item="vo2" key="key2">
+									<?php if( $vo['tab_col_id'] == $vo2['tab_col_id']) {
+											$select_option = $vo2['match'];
+											
+											}
+									?>
+							</foreach>
+							<option value="="    <if condition="$select_option eq 'eq'">selected="true"</if>  >=</option>
+							<option value="like" <if condition="$select_option eq 'like'">selected="true"</if>>like</option>
+							<option value="<"    <if condition="$select_option eq 'lt'">selected="true"</if>  >></option>
+							<option value=">"    <if condition="$select_option eq 'gt'">selected="true"</if>  ><</option>
+						</select>
+					</if>
+					
+					<if condition="$vo.column_type eq 'foreignKey' ">
+						<foreach name="search_option" item="vo2" key="key2">
+							<?php if( $vo['tab_col_id'] == $vo2['tab_col_id']) {
+									$is_defaule_search = $vo2['is_defaule_search'];
+									
+									}
+							?>
+						</foreach>
+						默认搜索：&nbsp;&nbsp;
+						是:&nbsp;<input type="radio" name="is_defaule_search" value="1" <if condition="$is_defaule_search eq '1' ">checked="true"</if> />&nbsp;
+						否:&nbsp;<input type="radio" name="is_defaule_search" value="0" <if condition="$is_defaule_search eq '0' ">checked="true"</if> <if condition="$is_defaule_search eq '' ">checked="true"</if> />
+					</if>
+						 
+					</td>
+				</tr>
+			</foreach>
+			
+				<tr>
+					<td colspan="3" style="text-align:center">
+						<input type="hidden" value="{$table_id}" name="table_id" /> 
+						<input type="submit" class="button" /> 
+						
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		</form>
+	</div> 
+					
+</div> 
+		
+		
+<include file="Model:public_footer" /> 		
+	

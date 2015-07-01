@@ -1,0 +1,72 @@
+<include file="Model:public_header" /> 
+
+<script charset="utf-8" src="__PUBLIC__/scripts/buildPicDialog.js"></script>
+<script type="text/javascript" src="__PUBLIC__/scripts/common.js"></script>
+<script>
+$(document).ready(function(){
+	//new dragSort('ul1','drag_span','{:U("Model/changeListSort")}');
+
+	//new Fast_radio_set('DD_table_content','content','{:U('Model/ajax_set_is')}','__PUBLIC__/images/status0.png','__PUBLIC__/images/status1.png');
+});
+
+
+
+</script>
+
+<script>
+
+$(document).ready(function(){
+	new buildPicDialog('.toBig',{'width':'600'});
+});
+
+</script>
+
+
+
+<div class="content-box-header CM_header">
+					
+	<h3>
+					
+		<a href="{:U('Model/table_list')}">
+			<font color="red"><<模型列表 &nbsp; &nbsp; &nbsp;</font>
+		</a>
+		<font color="red">{$table.table_name}--</font>的字段列表
+	</h3>
+					
+	<ul id="my_tab">
+		<li><a id="" href="{:U('Model/add_table_column',array('table_id'=>$table['table_id']))}" >添加字段&nbsp;</a></li>
+		<li><a id="" href="{:U('Model/Test_from',array('table_id'=>$table['table_id']))}" >  |  表单预览</a></li>
+	</ul>
+	<div class="clear"></div>
+</div> 
+				
+				
+<div class="content-box-content CM_boxList">
+	
+	<div class="tab-content default-tab" id="tab1">				
+	
+		<div style="clear:both">
+		<div class="search_ul_tt">
+		<form action="{:U('Admin/showList2')}" method="post">
+			{$search_form}
+			<li><input type="submit" class="button" value="搜索"/></li>
+			
+		</form>
+			<div class="clear"></div>
+		</div>
+				
+				{$list}
+				
+
+				<div style="clear:both"></div>
+		</div>
+		
+	</div> 
+	
+</div> 
+				
+			
+
+		
+<include file="Model:public_footer" /> 		
+	

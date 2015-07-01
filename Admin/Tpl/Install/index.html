@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>用户登陆</title>
+<link rel="stylesheet" href="__PUBLIC__/css/style_login.css" type="text/css" media="screen" />
+<style>
+form input.text-input{text-align:center; font-size:16px; font-weight:600; color:red} 
+</style>
+<script language="JavaScript">
+ function fleshVerify(){ 
+    
+    var time = new Date().getTime();
+    document.getElementById('verifyImg').src='__APP__/Install/verify/'+time;
+ }
+ </script>
+</head>
+  <body id="login">
+<div id="login-wrapper" class="png_bg" method="POST">
+			<div id="login-top">
+			
+				<!-- Logo (221px width) -->
+				
+				
+			</div> <!-- End #logn-top -->
+			<div style="font-size:28px; line-height:28px; text-align:center; margin-top:-20px;">安装程序</div>
+			<div style="height:30px;clear:both; width:100%"><div>
+			<div id="login-content" style="clear:both; padding-top:40px; ">
+				
+				<form action="__APP__/Install/do_install" method="POST">
+				
+					<p>
+						<label>主机：</label>
+						<input class="text-input" type="text" name="cm_database_host" value="localhost" />
+					</p>
+					<div class="clear"></div>
+					
+					<p>
+						<label>数据库名称：</label>
+						<input class="text-input" type="text" name="cm_database_name" value="" />
+					</p>
+					<div class="clear"></div>
+					
+					<p>
+						<label>数据库用户名：</label>
+						<input class="text-input" type="text" name="cm_database_user" value="root" />
+					</p>
+					<div class="clear"></div>
+					
+					<p>
+						<label>数据库密码：</label>
+						<input class="text-input" type="text" name="cm_database_pwd" value="" />
+					</p>
+					<div class="clear"></div>
+					<p>
+						<label>数据库端口：</label>
+						<input class="text-input" type="text" name="cm_database_port" value="3306" />
+					</p>
+					<div class="clear"></div>
+					
+					<p style="position: relative">
+						<label>验证码：</label>
+						<input class="text-input" type="'text'" name="verify"  />
+						<img id="verifyImg" style="position:absolute; left:350px; top:px;" src='__APP__/Install/verify/' onclick="fleshVerify()" />
+					</p>
+					<div class="clear"></div>
+					
+					
+					<p>
+						<input class="button" type="submit" value="&nbsp;&nbsp;确认安装&nbsp;&nbsp;" />
+					</p>
+					
+				</form>
+			</div> <!-- End #login-content -->
+			
+		</div> <!-- End #login-wrapper -->
+
+  </body>
+</html>

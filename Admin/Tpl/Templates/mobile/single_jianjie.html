@@ -1,0 +1,61 @@
+<include file="./Admin/Tpl/Templates/mobile/header.html" />
+<style>
+.cat_uol_li{width:200px;}
+</style>
+
+<div class="m_lkuai" style="margin:0 auto">
+	<div class="m_lkuai_l">
+		<a href="__APP__/Content/lists/cat_id/102">
+			<img src='__PUBLIC__/statics/default/images/pro2.png'/>
+		</a>
+	</div>
+	<div class="m_lkuai_r">
+		<a href="__APP__/Content/lists/cat_id/105">
+			<img src='__PUBLIC__/statics/default/images/pro3.png'/>
+		</a>
+	</div>
+</div>
+
+<div class="md10"></div>
+
+<ul class="cat_uol">
+	<li class="cat_uol_li">
+		<a class="cat_asdf <?php if(cat_id()==105){ echo 'cat_asdf_active'; }?>" href="__APP__/Content/lists/cat_id/105">美派简介</a>
+	</li>
+	<li class="cat_uol_li">
+		<a class="cat_asdf <?php if(cat_id()==106){ echo 'cat_asdf_active'; }?>" href="__APP__/Content/lists/cat_id/106">品牌背景</a>
+	</li>
+	<li class="cat_uol_li">
+		<a class="cat_asdf <?php if(cat_id()==108){ echo 'cat_asdf_active'; }?>" href="__APP__/Content/lists/cat_id/108">合作伙伴</a>
+	</li>
+	<li class="cat_uol_li">
+		<a class="cat_asdf <?php if(cat_id()==107){ echo 'cat_asdf_active'; }?>" href="__APP__/Content/lists/cat_id/107">美派新闻</a>
+	</li>
+</ul>
+<div class="md20"></div>
+
+<div class="pro_ge_f"></div>
+<div class="md20"></div>
+
+
+<div class="wingle_content">
+<?php 
+	$ccate = cat_id();
+	
+?>
+
+<?php $art = cat2article($ccate,$is_all=1,$num=1,$order='no'); ?>
+
+<P class="single_title">{$art['lists'][0]['title']}</P>
+{$art['lists'][0]['content']}
+</div>
+
+
+<div class="md30"></div>
+
+
+
+
+
+
+<include file="./Admin/Tpl/Templates/mobile/footer.html" />

@@ -1,0 +1,110 @@
+<include file="Model:public_header" /> 
+<style>
+
+table tr td{border:1px solid #dddddd; }
+table thead tr td{ text-align:center}
+</style>
+
+<div class="content-box-header CM_header">
+					
+	<h3>Table列表</h3>
+	
+	<ul id="my_tab">
+		<li><a id="" href="{:U('Model/add_table')" ></a></li>
+		
+		
+	</ul>
+	<div class="clear"></div>
+</div> 
+				
+				
+<div class="content-box-content CM_boxList">
+	
+	<div class="tab-content default-tab" id="tab1">
+					
+		<form action="__APP__/Model/add_table" method="post">
+			<div style="margin-bottom:20px;">
+			表名称：<input type="text" name="table_name"/>&nbsp;&nbsp;&nbsp;
+			
+			
+			
+			
+			缔属关系：
+			<select name="pid">
+				<option value="0" >---顶层关系---</option>
+				<foreach name="select_data" item="table_row" key="key">
+				<option value="{$table_row['table_id']}"  >
+				<?php
+					echo str_repeat('&nbsp;',($table_row['deep']-1)*3);
+					
+				?>
+				
+				{$table_row['table_name']}
+				</option>
+				</foreach>
+				
+			</select>
+			&nbsp;&nbsp;&nbsp;
+			描述：<input type="text" name="description" />&nbsp;&nbsp;&nbsp;
+			<input class="norbtn" type="submit" value="提交"/>
+			</div>
+		</form>
+		<hr/>
+					
+		<table>
+			<thead>
+				<tr>
+					
+					
+					<td>ID</td>
+					<td>表名称</td>
+					<td>描述</td>
+					<td>功能地址</td>
+
+					<td>操作</td>
+
+
+				</tr>
+			</thead>
+			<tbody>
+				
+			<foreach name="select_data" item="vo" key="key">
+				
+				
+				<tr>
+					
+					
+					<td>{$vo.table_id}</td>
+					<td style="font-weight:600; font-size:16px;">
+						
+						<?php
+							$str=str_repeat('|--',($vo['deep']-1));
+							
+							echo $str;
+						?>{$vo.table_name}
+						
+					</td>
+					<td>{$vo.description}</td>
+					<td><a href="__APP__/<?php echo ucfirst($vo['table_name']).'/'.ucfirst($vo['table_name']).'_list' ?>"><?php echo ucfirst($vo['table_name']).'/'.ucfirst($vo['table_name']).'_list' ?><a></td>
+
+					<td style="text-align:center">
+						<a href="{:U('Model/table_edit',array('table_id'=>$vo['table_id']) ) }" title="编辑">编辑</a>&nbsp;|&nbsp;
+						<a href="{:U('Model/table_column_list',array('table_id'=>$vo['table_id']) ) }" title="字段管理">字段管理</a>&nbsp;|&nbsp;
+						<a href="{:U('Model/table_list_manage',array('table_id'=>$vo['table_id']) ) }" title="列表管理">列表管理</a>&nbsp;|&nbsp;
+						<a href="{:U('Model/table_list_search',array('table_id'=>$vo['table_id']) ) }" title="搜索器配置">搜索器配置</a>&nbsp;|&nbsp;
+						<a id="" href="{:U('Model/excel_options',array('table_id'=>$vo['table_id']))}" >Excel配置</a>&nbsp;|&nbsp;
+						<a onclick="return confirm('是否确定要删除该数据表？');" href="{:U('Model/del_table',array('table_id'=>$vo['table_id'])) }" title="删除">删除</a> 
+						 
+					</td>
+				</tr>
+			</foreach>
+			</tbody>
+		</table>
+		
+	</div> 
+					
+</div> 
+		
+		
+<include file="Model:public_footer" /> 		
+	

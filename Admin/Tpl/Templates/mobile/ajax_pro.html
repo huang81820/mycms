@@ -1,0 +1,9 @@
+<foreach name="pro_list" item="vo">
+	<li>
+		<a href="{$Think.const.CON_PATH}/{$vo[product_id]}/cat_id/{$vo[cat_id]}">
+			<img src='{$vo.thumb}' />
+			<p class="pro_name">{$vo.title}</p>
+			<p class="pro_name2">规格：{$vo.guige}</p>
+		</a>
+	</li>
+</foreach>
